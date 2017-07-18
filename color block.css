@@ -1,0 +1,44 @@
+
+.wrapper{
+    width: 500px;
+    height: 500px;
+    border: 5px solid red;
+    font-size: 0;
+}
+.q1,.q2,.q3,.q4{
+    width: 250px;
+    height: 250px;
+    background-color: yellow;
+    display: inline-block;
+    line-height: 0;
+    margin: 0;
+    position: relative;
+    vertical-align: top;
+
+}
+.q2{
+    background-color: blue;
+}
+.q3{
+    background-color: olivedrab;
+}
+.q4{
+    background-color: green;
+}
+
+.q1 div{
+    background-color: purple;
+    width: 33.3%;
+    height: 33.3%;
+    display: inline-block;
+
+}
+.q1 .top{
+    margin: 0 33.3%;
+}
+.q1 .left{
+    margin-right: 33.3%;
+}
+.q1 .bottom{
+    margin: 0 33.3%;
+}
