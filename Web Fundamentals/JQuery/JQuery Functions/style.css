@@ -1,0 +1,14 @@
+section{
+    display: inline-block;
+    padding: 20px;
+}
+input{
+    display: inline-block;
+}
+div{
+    display: inline-block;
+    padding: 20px;
+}
+.red{
+    background-color: red;
+}

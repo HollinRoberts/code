@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img").click(function(){
+                    $(this).fadeOut(function(){
+                    });
+                });
+                $("input[value='restore']").click(function(){
+                    $("img").fadeIn(function(){
+                    });
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <div>
+            <img src="./ninja.jpg" alt="cartoon ninja">
+        </div>
+        <input type="button" name="restore" value="restore">
+
+
+
+        
+    </body>
+</html>    

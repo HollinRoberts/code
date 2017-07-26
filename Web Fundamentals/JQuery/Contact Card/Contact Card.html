@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="" href="./style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script type="text/javascript">
+           function attach_hover(){
+               $('div.card').click(function(){
+                    $(this).hide(0);}, function(){
+                    $(this).show(0);
+                });
+                // $('div.card').hover(function(){
+                //     $('p.des').show(0);
+                //     $('p.des').hide(0);});
+                    
+                 };
+           $(document).ready(function(){
+                $('form').submit(function(event){
+                    event.preventDefault();
+                    var first = $('input[name=first_name]').val();
+                    var last = $('input[name=last_name]').val();
+                    var description = $('input[name=description]').val();
+                    var card={
+                        First: first,
+                        Last: last,
+                        Description: description
+                    };
+                    console.log(first,last,description);
+                    console.log(card);
+                    ;
+                    $('aside').append('<div class=card></div>');
+                    $('div').last().append('<h1>'+ first+' '+ last +'</h1>');
+                    // $('div').last().append('<p class=description>'+description+'</p>');
+                    $('div').last().append('<p class=des>' + description + '</p>');
+                     $('div').last().append('<p>' + 'Mouse Over For Description' + '</p>');
+                    $('p.des').hide(0);
+                   
+                    attach_hover();
+
+                    
+                    
+                    return false;   
+                });
+                
+        });
+
+
+            
+        </script>
+    </head>
+    <body>
+        
+        <form action='process.php' method='post'>
+            First Name: <input type="text" name="first_name">
+            <br></br>
+            Last Name: <input type="text" name="last_name">
+            <br></br>
+            Description:<br></br>
+            <input type="text" name="description" value="Enter Description:">
+            <br></br>
+            <input type="submit" value="Add User">
+        </form>
+        <aside>
+
+        </aside>
+
+
+    </body>
+</html>     

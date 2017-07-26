@@ -1,0 +1,20 @@
+*{
+    outline: 1px dashed red; 
+}
+form{
+    display: inline-block;
+}
+form input[name=description]{
+    padding: 0 100px 100px 0;
+}
+aside{
+
+    float:right;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+}
+.card{
+    width:200px;
+    height:200px;
+}

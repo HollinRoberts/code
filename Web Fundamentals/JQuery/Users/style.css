@@ -1,0 +1,16 @@
+
+
+form{
+    display:inline-block;
+}
+td{
+    padding:10px;
+}
+th, td{
+   
+    border: 1px solid black;
+    text-align: center;
+}
+thead tr th{
+    width: 150px;
+}

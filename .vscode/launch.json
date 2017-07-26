@@ -1,0 +1,38 @@
+{ 
+  
+    "version": "6.11.1",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${file}",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 5858
+        }
+    ],
+  
+  "isShellCommand": true,
+  "suppressTaskName": true,
+  "osx": {
+    "command": "/usr/local/bin/node"
+  },
+  "linux": {
+    "command": "/usr/bin/node"
+  },
+  "windows": {
+    "command": "C:\\Program Files\\nodejs\\node.exe"
+  },
+  "tasks": [
+    {
+      "taskName": "node",
+      "args": ["${file}"],
+      "isBuildCommand": true
+    }
+  ]
+}

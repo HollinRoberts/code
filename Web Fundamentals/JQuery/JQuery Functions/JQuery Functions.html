@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script type="text/javascript">
+           
+            //  var count= 0;
+            // $(document).ready(function(){
+            //     $('input').click(function(){
+            //         // alert('hey');
+                   
+            //       .  console.log(++count);
+            //     })
+
+
+            // });
+            $(document).ready(function(){
+                $("input[value='before']").click(function(){  
+                   $("h1").before("<p>I'm First</p>");
+                });
+                $("input[value='addclass']").click(function(){  
+                   $("#addclass").addClass("red");
+                });
+                $("input[name='slideUP']").click(function(){  
+                   $(".slide").slideUp("slow",function(){
+                    });
+                });
+                $('input[value="slide down"]').click(function(){
+                    $(".slide").slideDown("slow",function(){
+                    });
+                });
+                $("input[value='slide toggle']").click(function(){
+                    $(".slide").slideToggle("slow",function(){
+                    });
+                });
+                $("input[value='Hide']").click(function(){
+                    $("#hide").hide(function(){
+                    });
+                });
+                $("input[value='Show']").click(function(){
+                    $("#hide").show(function(){
+                    });
+                });
+                $("input[value='Toggle']").click(function(){
+                    $("#hide").toggle(function(){
+                    });
+                });
+                $("input[value='Fade out']").click(function(){
+                    $("#fade").fadeOut(function(){
+                    });
+                });
+                $("input[value='Fade in']").click(function(){
+                    $("#fade").fadeIn(function(){
+                    });
+                });
+            });
+        </script>
+    </head>
+     <body>
+        <section>
+            <input type="button" name="Addclass" value="before">
+            <input type="button" name="Addclass" value="addclass">
+            <div id="addclass">
+                <h1>Addclass</h1>
+                <p>Click the button to add class 'red' to this paragraph</p>
+            </div>
+        </section>
+        <hr></hr>
+        <section>
+            <input id="slideup" type="button" name="slideUP" value="slide up">
+            <input id="slidedown" type="button" name="slidedown" value="slide down">
+            <input type="button" name="Addclass" value="slide toggle">
+            <div class="slide">
+                <h1>Slide Box</h1>
+                <p>Click the buttons to slide this box.</p>
+            </div>
+        </section>
+        <hr></hr>
+        <section>
+            <input type="button" name="Addclass" value="Hide">
+            <input type="button" name="Addclass" value="Show">
+            <input type="button" name="Addclass" value="Toggle">
+            <div id="hide">
+                <h1>Hide</h1>
+                <p>Click the button to hide this paragraph.</p>
+            </div>
+        </section>
+        <hr></hr>
+        <section>
+            <input type="button" name="Addclass" value="Fade out">
+            <input type="button" name="Addclass" value="Fade in">
+            <div id=fade>
+                <h1>Fade</h1>
+                <p>Click the buttons to fade this paragraph</p>
+            </div>
+        </section>
+    </body>
+</html>      
