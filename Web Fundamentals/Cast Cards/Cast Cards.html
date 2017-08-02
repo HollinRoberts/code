@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+    <head>
+        
+        <link rel="stylesheet" type="" href="./style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>   
+        <script type="text/javascript">
+             var data = 0;
+             var count = 0;
+             var crdnum= 0;
+            var heals = 0;
+            var swords = 0;
+            var draw = 0;
+            var opponentHealth = 20;
+            var playerHealth = 20;
+            var opponentswords=0;
+            var opponentheals = 0;
+
+            function clearall(){
+                $('.card').remove();
+                $('.inplay').remove();
+                $('.heal').remove();
+                heals=0;
+                swords=0;
+            }
+
+            function enemyturn(){
+                for(var i=0;i<4;i++){            
+                    var cardtype = Math.floor(Math.random()*3);
+                    if(cardtype<= 1){opponentswords++};
+                    if(cardtype===2){opponentheals++};
+                }
+                if(opponentheals<opponentswords){
+                    playerHealth-=((opponentswords*2)-1);
+                    opponentswords=0;
+                    console.log(playerHealth+'first if')
+                }
+                
+                else if(opponentheals>opponentswords){
+                    opponentHealth+=((opponentheals*2)-1);
+                    opponentheals=0;
+                    console.log(playerHealth+'else if')
+                }
+                else{
+                    if(cardtype===1){
+                        playerHealth-=((opponentswords*2)-1);
+                        opponentswords=0;
+                        console.log(playerHealth+'else, if')
+                    }
+                    else{
+                        opponentHealth+=((opponentheals*2)-1);
+                        opponentheals=0;
+                        console.log(playerHealth+'else, else')      
+                    }
+                }      
+            }
+
+
+            $(document).ready(function(){
+                $('.inplay').remove();
+
+                 
+                 
+                $('#hand').on('click','.card, .heal',function(){
+            
+                    if($(this).hasClass('card') && (crdnum>0)){
+                        $(this).last().remove();
+                        crdnum--;
+                        $('#play').append('<div class="inplay"></div>');
+                        
+                        $('#play').children().last().append('<img src="./sword.png" alt="swinging sword">');
+                        
+                        swords++;
+                        
+                    } else if($(this).hasClass('heal') && (count>0)){
+                        $(this).last().remove();
+                        count--;
+                        console.log(count);
+                        $('#play').append('<div class="inplay"></div>');
+                        
+                        $('#play').children().last().append('<img src="./Potion.png" alt="potion">');
+
+                        heals++;
+                    }
+
+                 });
+
+                $('#deck').click(function(){
+                    if(document.getElementById("turn").innerHTML == "End Turn"){
+
+                    console.log(draw)
+                    if(draw<4){
+                        draw++;
+                        
+                        var cardtype = Math.floor(Math.random()*3);
+                        
+                        if(cardtype<=1){
+                        $('#hand').append('<img class="card" src="./sword.png" alt="sword">');
+                        crdnum++;
+                        }
+                        if(cardtype===2){
+                        $('#hand').append('<img class="heal" src="./Potion.png">');
+                        count++;
+                        }
+                    }
+                    }
+
+                });
+            
+                $('#turn').click(function () {
+                        // if (opponentHealth > 0) {
+                        //     $('#turn').text('End Turn');
+                        // }
+                        $('.inplay').remove();
+                        draw = 0;
+                        
+                        if (swords > 0) {
+                            opponentHealth -= (swords * 2) - 1;
+                        }
+                        if (heals > 0) {
+                            playerHealth += (heals * 2) - 1;
+                        }
+                        heals = 0;
+                        swords = 0;
+                        $('#opponentHealth').html('<h3>Opponent Health:' + opponentHealth + '</h3>')
+                        $('#playerHealth').html('<h3>Player Health:' + playerHealth + '</h3>')
+                        console.log(playerHealth+'ph')
+                        if (opponentHealth <= 0) {
+                            alert('You Win!');
+                            $('#turn').text('New Game');
+                            opponentHealth = 20;
+                            playerHealth = 20;
+                            clearall();
+                        
+                        }
+                        else if(document.getElementById("turn").innerHTML === "End Turn"){enemyturn()
+                        console.log(playerHealth+'ph')
+                        }
+                        else if(playerHealth<=0){
+                            alert('You Loose!');
+                            $('#turn').text('New Game');
+                            opponentHealth = 20;
+                            playerHealth = 20;
+                            clearall();
+                        }
+                        else if (opponentHealth > 0) {
+                            $('#turn').text('End Turn');
+                        }
+                           
+                        
+
+
+
+                    });
+
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            
+            <div id="play">
+
+            </div>
+            <h3 id="turn">New Game</h3>
+            <div id="playerHealth"><h3>Opponent Health:</h3></div> 
+            <div id="opponentHealth"> <h3>Player Health:</h3></div>
+
+        </main>
+        <footer>
+            <div id="deck">
+                <h1>Draw</h1>
+                <img src="./cardback.jpg" alt="deck">
+            </div>
+            <div id="hand">
+            </div>
+        </footer>
+
+
+    </body>
+</html>     

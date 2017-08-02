@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script type="text/javascript">
+            $(document).ready(function(){
+                for(var i=1;i<=151;i++){
+                    $('main').append('<img id="' + i + '" src="http://pokeapi.co/media/img/'+i+'.png">');
+                };
+                $('img').click(function (){
+                    var poke=(this['id']);
+                    var data = 0;
+                    console.log(poke);
+                    $.get("http://pokeapi.co/api/v2/pokemon/"+poke+"/",function(data){
+                        var type = "";
+                        type += '<h1>'+data.name+'</h1>'
+                        type += '<img src="http://pokeapi.co/media/img/'+poke+'.png">';
+                        type += "<h4>Types:</h4>";
+                        type += "<ul>"; 
+                        for(var i = 0; i < data.types.length; i++) {
+                        type += "<li>" + data.types[i].type.name + "</li>";
+                        }
+                        type += "</ul>";
+                        type += "<h4>Height:</h4>"+'<p>'+ data.height+'</p>';
+                        type += "<h4>Weight:</h4>"+'<p>'+ data.weight+'</p>';
+                        
+                        console.log(data);
+                        console.log(type);
+                        $('#screen').html(type);
+                        
+
+
+                    }, "json");
+                    
+                });
+                
+
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+        </main>
+        <aside>
+            <div id=screen>
+                <h1>'Pick a Pokemon'</h1>
+                <!-- <img id=dex src="" alt="">
+                <ul><h4>Type:</h4>
+
+                </ul>
+               <h4>Height:</h4>
+               <p id=height></p>
+               <h4>Weight:</h4>
+               <p id=weight></p> -->
+
+            </div>
+        </aside>
+
+    </body>
+</html>     

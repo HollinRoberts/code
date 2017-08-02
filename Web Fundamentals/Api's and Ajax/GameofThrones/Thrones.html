@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="" href="style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('img[alt="house targaryen"]').click(function(){
+                    $.get('https://anapioficeandfire.com/api/houses/378',function(data){
+                    console.log(data)
+                        
+
+
+                    }, "json");
+
+
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="crop"><img class="shift"src="./targaryen.jpg" alt="house targaryen"></div>
+            <div class="crop"><img class="shift"src="./stark.jpg" alt="house stark"></div>
+            <div class="crop"><img src="./lannister.jpg" alt="house lannister"></div>
+            <div class="crop"><img class="shift"src="./baratheon.png" alt="house baratheon"></div>
+        </header>
+        <main>
+            <p>Name: Stark of Winterfell</p>
+            <p>Words: 
+        </main>
+
+    </body>
+</html>     

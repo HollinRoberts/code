@@ -6,15 +6,18 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
         <script type="text/javascript">
            function attach_hover(){
-               $('div.card').click(function(){
-                    $(this).hide(0);}, function(){
-                    $(this).show(0);
+               $('div').hover(function(){
+                    $(this).children('h1').hide(0);}, function(){
+                    $(this).children('h1').show(0);
                 });
-                // $('div.card').hover(function(){
-                //     $('p.des').show(0);
-                //     $('p.des').hide(0);});
-                    
-                 };
+                $('div').hover(function(){
+                    $(this).children('.des').show(0);}, function(){
+                    $(this).children('.des').hide(0);});
+                $('div').hover(function(){
+                    $(this).children('.onmouse').hide(0);}, function(){
+                    $(this).children('.onmouse').show(0);});
+           };
+
            $(document).ready(function(){
                 $('form').submit(function(event){
                     event.preventDefault();
@@ -33,7 +36,7 @@
                     $('div').last().append('<h1>'+ first+' '+ last +'</h1>');
                     // $('div').last().append('<p class=description>'+description+'</p>');
                     $('div').last().append('<p class=des>' + description + '</p>');
-                     $('div').last().append('<p>' + 'Mouse Over For Description' + '</p>');
+                     $('div').last().append('<p class=onmouse>' + 'Mouse Over For Description' + '</p>');
                     $('p.des').hide(0);
                    
                     attach_hover();

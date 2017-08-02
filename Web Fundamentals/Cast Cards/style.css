@@ -1,0 +1,89 @@
+ /* *{
+    outline: 1px dashed red; 
+} */
+footer{
+    height: 400;
+    padding: 0 0 20px 20px;
+}
+main{
+    padding: 20px;
+}
+.card, .inplay,.heal{
+    display: inline-block;
+    width:200px;
+    height:300px;
+    margin: 0 0 0 -100px;
+    border-radius: 20px;
+     box-shadow: 10px 10px 10px 0 black; 
+
+}
+.card img, .heal img{
+    display: block;
+    width:70%;
+    margin: auto;
+    box-shadow: 5px 5px 2px;
+}
+#deck{
+    
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    width:200px;
+    height:300px; 
+    box-shadow: 4px 4px 2px;
+    border-radius: 20px;
+}
+#deck img{
+    
+    width:200px;
+    height:300px;
+    vertical-align: top;
+    border-radius: 20px;
+}
+h1{
+    position: absolute;
+    display: inline-block;
+    left: 60px;
+    top: 100px;
+}
+
+
+#play{
+    display: inline-block;
+    width:1000px;
+    height:400px;
+}
+#play .inplay:first-child{
+    margin: 0 0 0 50px;
+}
+#hand,#heal,#card{
+    position: absolute;
+    display: inline-block;
+    width:1200px;
+    height:200px;
+    left: 200px
+}
+/* #hand .card:first-child{
+    margin: 0 0 0 50px;
+} */
+#hand .heal:first-child, .card:first-child{
+    margin: 0 0 0 100px;
+}
+#heal{
+    bottom:0
+}
+h3{
+    display: inline-block;
+    background-color: gray;
+    padding: 25px 50px;
+    border-radius: 10px;
+    vertical-align: top;
+    box-shadow: 5px 5px 3px;
+    /* border: 3px solid #a51200; */
+}
+body{
+    background-image: url("leather-3.jpg");
+    width: 1920px;
+    height: 1080px;
+    padding: 20px;
+}

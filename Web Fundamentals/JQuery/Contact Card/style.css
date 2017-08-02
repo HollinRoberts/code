@@ -1,11 +1,19 @@
-*{
-    outline: 1px dashed red; 
+
+body{
+    padding:50px;
 }
 form{
+    padding:20px;
     display: inline-block;
+    background-color: seagreen;
+    border-radius: 20px;
 }
 form input[name=description]{
+    background-color: gray;
     padding: 0 100px 100px 0;
+}
+form input{
+    background-color: gray;
 }
 aside{
 
@@ -15,6 +23,11 @@ aside{
     text-align: right;
 }
 .card{
+    margin: 20px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: gray;
     width:200px;
     height:200px;
+    padding:50px;
 }

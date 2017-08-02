@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="" href="./style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <script type="text/javascript">
+           function attach_hover(){
+               $('div').hover(function(){
+                    $(this).children('h1').hide(0);}, function(){
+                    $(this).children('h1').show(0);
+                });
+                $('div').hover(function(){
+                    $(this).children('.bio').show(0);}, function(){
+                    $(this).children('.bio').hide(0);});
+                $('div').hover(function(){
+                    $(this).children('.onmouse').hide(0);}, function(){
+                    $(this).children('.onmouse').show(0);});
+                 };
+           $(document).ready(function(){
+                $('form').submit(function(event){
+                    var user = $('input[name=user]').val()
+                    console.log(user);
+                    var link='https://api.github.com/users/' + user;
+                    jQuery.getJSON( link  , function(data){createcard(data)});
+                    event.preventDefault();
+                    
+                });
+            function createcard(data){
+                console.log(data);    
+                var name = data.name;
+                var location = data.location;
+                var bio = data.bio;
+                var avatar = data.avatar_url
+                
+                    // console.log(first,last,description);
+                    // console.log(card);
+                    // ;
+                        $('aside').append('<div class=card></div>');
+                        $('div').last().append('<h1>' + name + '</h1>');
+                        // $('div').last().append('<p class=description>'+description+'</p>');
+                        $('div').last().append('<p class=bio>' + bio + '</p>');
+                         $('div').last().append('<p class=onmouse>' + 'Mouse Over For Description' + '</p>');
+                        $('p.bio').hide(0);
+                    
+                        attach_hover();
+
+                    
+                    
+                    return false;  
+            }
+        });
+
+
+            
+        </script>
+    </head>
+    <body>
+        
+        <form action='process.php' method='post'>
+            User Name: <input type="text" name="user">
+            <input type="submit" value="Add User">
+        </form>
+        <aside>
+
+        </aside>
+
+
+    </body>
+</html>     
