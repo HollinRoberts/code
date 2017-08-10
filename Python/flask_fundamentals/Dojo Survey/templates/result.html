@@ -1,0 +1,27 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style10.css')}}">
+       
+    </head>
+    <body>
+    
+      <h3>Submitted Info</h3>
+     {%with messages = get_flashed_messages() %}
+            {% if messages %}
+                {%for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+       <dl>
+           <dt>My name is:</dt><dd>{{name}}</dd>
+           <dt>I'm in:</dt><dd>{{location}}</dd>
+           <dt>My favorite language is:</dt><dd>{{language}}</dd>
+           <dt>Comments:</dt><dd>{{comment}}</dd>
+       </dl>
+       
+    
+      </form>
+    </body>
+</html>

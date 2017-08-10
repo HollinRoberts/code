@@ -1,0 +1,35 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style10.css')}}">
+       
+    </head>
+    <body>
+      <h1>Index Page</h1>
+       {%with messages = get_flashed_messages() %}
+            {% if messages %}
+                {%for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      <h3>Create a User</h3>
+      <form action='/result' method='post'>
+        Your Name: <input type='text' name='Your Name'>
+        
+        Dojo Location: <select name="location">
+            <option value="Seattle">Seattle</option>
+            <option value="LA">LA</option>
+            <option value="New York">New York</option>
+            </select>
+        Favorite Language: <select name="language">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            </select> 
+        Comment (optional): <textarea name="text"></textarea>
+
+          <input type='submit' value='Submit'>
+      </form>
+    </body>
+</html>

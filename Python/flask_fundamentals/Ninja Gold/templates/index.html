@@ -1,0 +1,46 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+        <!-- <script type="text/javascript">
+            $(document).ready(function(){
+            x='{{session["action"]}}'
+            console.log(x) 
+            for(var i=0;i<x.length;i++){
+                $('.actions').append("<p>"+x[i]+"</p>");
+                }
+            });
+            </script> -->
+    </head>
+    <body>
+        <p>Your Gold:</p>
+        <div class="gold"><p>{{session["gold"]}}</p></div>
+        <form action="/process_money" method="post">
+            <h2>Farm</h2>
+            <p>(earn 10-20 golds)</p>
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+        <form action="/process_money" method="post">
+            <h2>Cave</h2>
+            <p>(earn 5-10 golds)</p>
+            <input type="hidden" name="building" value="cave" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+        <form action="/process_money" method="post">
+            <h2>House</h2>
+            <p>(earn 2-5 golds)</p>
+            <input type="hidden" name="building" value="house" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+        <form action="/process_money" method="post">
+            <h2>Casino</h2>
+            <p>(earn/loose 0-50 golds)</p>
+            <input type="hidden" name="building" value="casino" />
+            <input type="submit" value="Find Gold!"/>
+        </form>
+        <div class="actions">
+            <p>{{session["action"]}}</p>
+        </div>
+    </body>
+</html>
