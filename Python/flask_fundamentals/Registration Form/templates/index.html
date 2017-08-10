@@ -1,0 +1,30 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style10.css')}}">
+       
+    </head>
+    <body>
+      <h1>Index Page</h1>
+       {%with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul class=flashes>
+                {%for category, message in messages %}
+                <li class="{{category}}">{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+      <h3>Create a User</h3>
+      
+      <form action='/result' method='post'>
+        First Name: <input type='text' name='Your Name'>
+        Last Name: <input type='text' name='Last'>
+        Email: <input type='text' name='email'>
+        Password: <input type='password' name='password'>
+        Confirm Password: <input type='password' name='confirm'>
+        Birth Date mm/dd/yyyy: <input type="text" name="birthdate">
+          <input type='submit' value='Submit'>
+      </form>
+    </body>
+</html>

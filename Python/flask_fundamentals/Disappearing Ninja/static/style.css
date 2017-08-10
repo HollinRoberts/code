@@ -1,0 +1,11 @@
+p{
+    color: blue;
+}
+form{
+    display: block;
+    width: 400px;
+
+}
+form input{
+    display: block;
+}

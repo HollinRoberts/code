@@ -1,0 +1,15 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+    </head>
+    <body>
+      <h1>Welcome to the Great Number Game!</h1>
+      <p>I am thinking of a number between 1 and 100</p>
+      <p>Take a guess!</p>
+      <p>{{result}}</p>
+        <form action='/guess' method='post'>
+            <input type='value' name='guess'>
+            <input type='submit' value='guess'>
+        </form>
+    </body>
+</html>
