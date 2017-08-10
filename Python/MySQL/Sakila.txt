@@ -1,0 +1,104 @@
+select first_name,last_name,email,address
+from customer
+join address
+on address.address_id = customer.address_id
+where city_id = 312
+
+
+
+select film.film_id,title,description,release_year,rating,special_features, category.name
+from film
+
+join film_category
+on film_category.film_id = film.film_id
+
+join category
+on category.category_id = film_category.category_id
+
+
+
+select actor.actor_id,actor.first_name,actor.last_name,title,description,release_year
+from film
+
+join film_category
+on film_category.film_id = film.film_id
+
+join category
+on category.category_id = film_category.category_id
+
+join film_actor
+on film_actor.film_id = film.film_id
+
+join actor
+on actor.actor_id = film_actor.actor_id
+
+where actor.actor_id = 5
+
+
+select store_id,city.city_id,first_name,last_name,email,address
+from customer
+join address
+on address.address_id = customer.address_id
+join city
+on city.city_id = address.city_id
+where city.city_id IN (1,42, 312,459) and store_id = 1
+order by city.city_id
+
+
+select title,description,release_year, rating, special_features
+from film
+join film_category
+on film_category.film_id = film.film_id
+join category
+on category.category_id = film_category.category_id
+join film_actor
+on film_actor.film_id = film.film_id
+join actor
+on actor.actor_id = film_actor.actor_id
+where actor.actor_id = 15 and film.rating = "G"
+
+
+
+select film.film_id,film.title, concat(first_name, ' ', last_name)as Name,actor.last_update
+from film
+
+join film_actor
+on film_actor.film_id = film.film_id
+join actor
+on actor.actor_id = film_actor.actor_id
+where film.film_id = 369
+
+
+
+select film.film_id,title,description,release_year,rating,special_features, category.name
+from film
+
+join film_category
+on film_category.film_id = film.film_id
+
+join category
+on category.category_id = film_category.category_id
+where film.rental_rate < 2.99 and category.name = "drama"
+
+
+
+select film.film_id,film.title, concat(first_name, ' ', last_name)as Name, description,release_year,rating,special_features,category.name
+from film
+join film_actor
+on film_actor.film_id = film.film_id
+join actor
+on actor.actor_id = film_actor.actor_id
+join film_category
+on film_category.film_id = film.film_id
+join category
+on category.category_id = film_category.category_id
+where first_name = "sandra" and last_name = "kilmer" and category.name = "action"
+
+
+
+
+
+
+
+
+

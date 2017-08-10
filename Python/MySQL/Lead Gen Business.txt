@@ -1,0 +1,133 @@
+select sum(amount), charged_datetime as 'Month'
+from billing
+where charged_datetime like '%2012-03%' 
+
+
+
+select sum(amount), clients.client_id
+from billing
+join clients
+on clients.client_id = billing.client_id
+where clients.client_id = 2
+
+
+
+select clients.first_name, sites.domain_name, clients.client_id
+from clients
+join sites
+on clients.client_id = sites.client_id
+where clients.client_id = 10
+
+
+
+select clients.client_id, count(sites.domain_name) as number_of_websites, date_format(created_datetime , '%M')as Month,date_format(created_datetime , '%Y') as Year
+from clients
+join sites
+on clients.client_id = sites.client_id
+where clients.client_id = 1
+group by created_datetime
+
+
+
+select clients.client_id, count(sites.domain_name) as number_of_websites, date_format(created_datetime , '%M')as Month,date_format(created_datetime , '%Y') as Year
+from clients
+join sites
+on clients.client_id = sites.client_id
+where clients.client_id = 20
+group by created_datetime
+
+
+
+select sites.domain_name, count(leads_id)as 'Number 0f Leads', date_format(leads.registered_datetime, '%M, %e, %Y') as "Date_Generated"
+from clients
+join sites
+on clients.client_id = sites.client_id
+join leads
+on sites.site_id = leads.site_id
+where leads.registered_datetime between '2011,01,01' and '2011,02,15'
+group by sites.site_id
+
+
+
+
+select concat(clients.first_name,' ', clients.last_name)as "Clients_name", count(leads_id)as 'Number 0f Leads'
+from clients
+join sites
+on clients.client_id = sites.client_id
+join leads
+on sites.site_id = leads.site_id
+where leads.registered_datetime between '2011,01,01' and '2011,12,31'
+group by clients.client_id
+
+
+
+select concat(clients.first_name,' ', clients.last_name)as 'Clients_name', count(leads.leads_id) as 'Number 0f Leads', date_format(leads.registered_datetime, '%M') as 'Month_Generated'
+#select *
+from clients
+join sites
+on clients.client_id = sites.client_id
+join leads
+on sites.site_id = leads.site_id
+where leads.registered_datetime between '2011,01,01' and '2011,6,31'
+group by clients.client_id, month(leads.registered_datetime)
+order by month(leads.registered_datetime)
+
+
+
+select concat(clients.first_name,' ', clients.last_name)as 'Clients_name', sites.domain_name, count(leads.leads_id) as 'Number 0f Leads', date_format(leads.registered_datetime, '%M') as 'Month_Generated'
+#select *
+from clients
+join sites
+on clients.client_id = sites.client_id
+join leads
+on sites.site_id = leads.site_id
+where leads.registered_datetime between '2011,01,01' and '2011,12,31'
+group by sites.site_id
+order by clients.client_id, month(leads.registered_datetime)
+
+
+
+
+select concat(clients.first_name,' ', clients.last_name)as 'Clients_name', sites.domain_name, count(leads.leads_id) as 'Number 0f Leads'
+#select *
+from clients
+join sites
+on clients.client_id = sites.client_id
+join leads
+on sites.site_id = leads.site_id
+#where leads.registered_datetime between '2011,01,01' and '2011,12,31'
+group by sites.site_id
+order by clients.client_id, count(leads.leads_id) desc
+
+
+
+select concat(clients.first_name,clients.last_name)as Name,sum(amount), date_format(charged_datetime , '%M')as Month,date_format(charged_datetime , '%Y') as Year
+from billing
+join clients
+on clients.client_id = billing.client_id
+group by month(billing.charged_datetime), clients.client_id
+order by clients.client_id, year(billing.charged_datetime),month(billing.charged_datetime)
+
+
+
+
+select concat(clients.first_name,' ',clients.last_name)as Name, group_concat(' ',sites.domain_name separator ' /' ) as sites
+from clients
+join sites
+on clients.client_id = sites.client_id
+group by concat(clients.first_name,' ',clients.last_name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
