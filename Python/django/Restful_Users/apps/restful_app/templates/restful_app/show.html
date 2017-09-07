@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+    <head>
+        <script>
+            "use strict";
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>User {{user}}</h1>
+        </header>
+        <main>
+    
+                
+        
+                    <p><h3>Full Name:</h3> {{info.first_name}} {{info.last_name}}</p>
+                    <p><h3>Email:</h3> {{info.email}}</p>
+                    <p><h3>Created:</h3> {{info.created_at}}</p>
+                    <a href="/edit/{{user}}"> Edit </a> <a href="/destroy/{{user}}"> Delete </a><a href="/"> Go Back </a>
+        
+              
+        </main>
+
+    </body>
+</html>   

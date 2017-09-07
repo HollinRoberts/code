@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script>
+            "use strict";
+
+        </script>
+    </head>
+    <body>
+        <header>
+            
+            <h1>Add a new Course</h1>
+            <form action="/submit" method="POST">
+                {% csrf_token %}
+                Name: <input type="text" name="name" value=""><br>
+                Description: <textarea rows="5" cols="50" name="desc"></textarea><br>
+                <input type="submit" name="course" value="Submit">
+            </form>
+        </header>
+        <main>
+           <h3>Courses</h3>
+            <ul style=list-style:none>
+            <table class="table table-striped">
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                   
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+                {% for each in course %}
+                <tr>
+                    <td>{{each.name}}</td>
+                    <td>{{each.desc}}</td>
+                    <td>{{each.created_at}}</td>
+                    <td> <a href="/remove/{{each.id}}">Remove</a></td>
+                </tr>
+                {% endfor %} 
+                </table>
+            
+            </ul>
+        </main>
+
+    </body>
+</html>   

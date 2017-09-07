@@ -1,0 +1,7 @@
+<h1>Powers</h1>
+<form action='/add_power' method='post'>
+    {% csrf_token %}
+    Name: <input type="text" name="powers" value=""><br>
+    Description: <input type="text" name="desc" value=""><br>
+    <input type="submit" name="submit" value="Add">
+</form>
