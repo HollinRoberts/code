@@ -1,0 +1,16 @@
+JavaScript Hoisting
+
+1:
+would print undef.
+2:
+would print magnet
+3:
+would print super cool
+4:
+would print chicken, half-chicken
+5:
+woupld print chicken, fish, error
+6:
+undefined,rock,r&b,disco
+7:
+san jose,seattle,burbank,san jose

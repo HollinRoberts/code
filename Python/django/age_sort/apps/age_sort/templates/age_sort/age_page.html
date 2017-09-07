@@ -1,0 +1,30 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       
+       
+    </head>
+    <body>
+        <header>
+           <h1>{{request.session.age}} </h1>
+        </header>
+        <main>
+        <h4>List of people in group</h4>
+           
+             <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                {% for each in users %}
+                <tr>
+                    <td> {{each.name}}</td>
+                    <td> {{each.age}}</td>
+                </tr>
+            {% endfor %}
+             </table>
+           <a href="/comment">Add Comment</a>
+        <a href="/dashboard">Back</a>
+        </main>   
+    </body>
+</html>

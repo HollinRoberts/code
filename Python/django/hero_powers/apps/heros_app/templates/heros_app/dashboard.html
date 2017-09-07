@@ -1,0 +1,32 @@
+<html>
+    <head>
+       <title>Login</title>
+       
+       
+    </head>
+    <body>
+      <a href="/powers">Add Power</a>
+      <a href="/heros">Add Hero</a>
+      <a href="/log_out">Log out</a>
+      <table>
+        <tr>
+            <th>Name</th>
+            <th>Powers</th>
+            <th>Likes</th>
+            <th>Actions</th>
+        </tr>
+        {% for hero in heros %}
+            <tr>
+                <td><a href="/heros_app/{{hero.name}}">{{hero.name}}</a></td>
+                <td>{%for power in hero.powers.all%}{{power.name}}, {%endfor%}</td>
+                <td>{{hero.likes.all.count}}</td>
+                <td><a href="/like/{{hero.name}}">like</a>
+            </tr>
+      
+        {% endfor %}
+
+      </table>
+    
+
+    </body>
+</html>

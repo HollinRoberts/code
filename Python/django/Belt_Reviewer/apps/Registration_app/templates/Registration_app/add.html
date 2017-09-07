@@ -1,0 +1,42 @@
+
+<html>
+    <head>
+       <title>Form Test Index</title>
+       
+       
+    </head>
+    <body>
+      <header>
+            <a href="/log_out">Log out</a>
+       
+      </header>
+      <main>
+        <h3>Add a New Book Title and a Review</h3>
+        <form action="/new_book" method="POST">
+          {% csrf_token %}
+          <h4>Book Title:</h4> <input type="text" name="title" value=""><br>
+          <h4>Author:</h4><br>
+          Choose from the list:  
+          <select name="existing_author">
+            {% for each in context %}
+                <option value=""></option>
+                <option value="{{each.author}}">{{ each.author }}</option>
+            {% endfor %}
+          </select><br>
+          Or add a new author: <input type="text" name="author" value="">
+          <h4>Review:</h4><textarea rows="5" cols="40" name="review"></textarea><br>
+          <h4>Rating</h4>
+          <select name="stars">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+          </select>stars.<br>
+          <input type="submit" name="book" value="Add Book and Review">
+        
+
+        </form>
+      </main>
+    </body>
+</html>

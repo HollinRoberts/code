@@ -1,0 +1,30 @@
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'words_app/css/style.css' %}" >
+</head>
+<body>
+  <h1>Add a new word</h1>
+  <form action='words/add_word' method='POST'>
+    {% csrf_token %}
+    <input type="text" name="word"><br>
+    Choose color<br>
+    <input type="radio" name="radio" value="red"> Red<br>
+    <input type="radio" name="radio" value="blue"> Blue<br>
+    <input type="radio" name="radio" value="green"> Green<br> 
+    <input type="checkbox" name="big" value="h1"> Click for big fonts!<br>
+    <input type="submit" value="Add to Session">
+    
+  </form>
+  <div class="session">
+        <ul style=list-style:none>
+            {% if request.session.bob %}
+                {% for each in request.session.bob %}
+                    <li>{{each|safe}}</li>
+                {% endfor %}
+            {% endif %} 
+        </ul>
+  </div>
+
+</body>
+</html>

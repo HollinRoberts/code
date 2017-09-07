@@ -1,0 +1,38 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       
+       
+    </head>
+    <body>
+        <h1>Birthdays</h1>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        <h3>Create a User</h3>
+      
+        <table>
+            <tr>
+                <th>Jan</th>
+                <th>Feb</th>
+                <th>Mar</th>
+                <th>Apr</th>
+                <th>May</th>
+                <th>Jun</th>
+                <th>Jul</th>
+                <th>Aug</th>
+                <th>Sep</th>
+                <th>Oct</th>
+                <th>Nov</th>
+                <th>Dec</th>
+            </tr>
+            <tr>
+                {% for each in month %}<td><ul style="list-style:none;"> {% for user in each %} <li>{{user.first_name}}</li> {%endfor%}</ul></td>{%endfor%}
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       
+       
+    </head>
+    <body>
+      <h1>Index Page</h1>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+      <h3>Create a User</h3>
+      
+      <form action='/submit' method='post'>
+        {% csrf_token %}
+        First Name: <input type='text' name='first_name'>
+        Last Name: <input type='text' name='last_name'>
+        Email: <input type='text' name='email'>
+        Password: <input type='password' name='password'>
+        Confirm Password: <input type='password' name='confirm'>
+        Birth Date mm/dd/yyyy: <input type="text" name="birthdate">
+          <input type='submit' value='Submit'>
+      </form>
+
+        <form action='/login' method='post'>
+        {% csrf_token %}
+        Email: <input type='text' name='email'>
+        Password: <input type='password' name='password'>
+        <input type='submit' value='Submit'>
+      </form>
+    </body>
+</html>

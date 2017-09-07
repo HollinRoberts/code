@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+    <head>
+        <script>
+            var _ = {
+                map: function (list,iter) {
+                    for(let i=0;i<list.length;i++){
+                        list[i]=iter(list[i])
+                    }
+                return list
+                },
+                reduce: function (list,iter,memo) {
+                    sum = 0
+                    if(memo===undefined){
+                        memo=list[0]
+                        for(let i=1;i<list.length;i++){
+                            sum+=iter(memo,list[i])
+                        }
+                    }
+                    else{
+                        for(let i=0;i<list.length;i++){
+                            sum+=iter(memo,list[i])
+                        }
+                    }
+                return sum 
+                },
+                find: function (list,predicate) {
+                    for(let i=0;i<list.length;i++){
+                        if(predicate(list[i])){
+                            return list[i]
+                        }
+                    }
+                    return undefined
+                },
+                filter: function (list,predicate) {
+                    result=[]
+                    for(let i=0;i<list.length;i++){
+                        if(predicate(list[i])){
+                             result.push(list[i])
+                        }
+                    }
+                    if(result.length==0){
+                        return undefined
+                    }
+                    return result
+                },
+                reject: function (list,predicate) {
+                    result=[]
+                    for(let i=0;i<list.length;i++){
+                        if(!predicate(list[i])){
+                             result.push(list[i])
+                        }
+                    }
+                    if(result.length==0){
+                        return undefined
+                    }
+                    return result
+                }
+            }
+            console.log(_.map([1, 2, 3], function(num){ return num * 3; }))
+            console.log(_.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 0))
+            console.log(_.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }))
+            console.log(_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }))
+            console.log(_.reject([1, 2,3,  4,5,  6], function(num){ return num % 2 == 0; }))
+
+        </script>
+    </head>
+</html>   

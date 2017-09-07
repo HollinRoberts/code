@@ -1,0 +1,26 @@
+<html>
+    <head>
+       <title>Show</title>
+       
+       
+    </head>
+    <body>
+      <a href="heros/powers">Add Power</a>
+      <a href="heros/heros">Add Hero</a>
+ 
+    <p><h4>Name:</h4> {{hero.0.name}} </p>
+    <p><h4>Powers:</h4>    {% for each in hp%}{{each.name}}, {%endfor%} </p>
+    <form action="/heros_app/{{hero.0.name}}" method="post">
+      {% csrf_token %}
+      Add a power (can have more than one): 
+      <select name="powers">
+        {% for each in powers%}
+          <option value="{{each.name}}">{{each.name}}</option>
+
+        {%endfor%}
+    
+      </select>
+      <input type="submit" name="submit" value="Add">
+    </form>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+    <head>
+        <script>
+            //part 1 String of stars. Make a function that takes a number and prints that many stars
+            function starString(x){
+                if(x){
+                    var stars = "*";
+                    for(var i=1;i<x;i++){
+                        stars=stars+"*";
+                    }    
+                return stars
+                }
+            }
+        //    let stars = starString(4);
+        //    console.log(stars);
+
+           //part 2 create a function that takes an array and prints a number of stars for each.
+        //    function drawStars(arr){
+        //        for(var i = 0;i<arr.length;i++){
+        //            console.log(starString(arr[i]))
+        //        }
+        //    }
+        //    let x = [4, 6, 1, 3, 5, 7, 25]
+        //    drawStars(x)
+
+           //part 3 create a function that takes an array and prints a string of either stars for numbers or repeats the first letter of a string for the length of that string.
+           function drawStars(arr){
+               for(var i = 0;i<arr.length;i++){
+                    if(typeof(arr[i])=='number'){
+                        console.log(starString(arr[i]));
+                    }
+                    if(typeof(arr[i])=='string'){
+                        var l=arr[i][0].toLowerCase();
+                        var string=l;
+                        for(let x=1;x<arr[i].length;x++){
+                           var string= string+l;
+                        }
+                        console.log(string)
+                   }
+               }
+           }
+           let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+           drawStars(x);
+           
+        </script>
+    </head>
+</html>   

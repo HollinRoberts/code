@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+    <head>
+        <script>
+            class Ninja{
+                constructor(name){
+                    this.name = name;
+                    this.health = 100;
+                    this.speed = 3;
+                    this.strength = 3;
+                }
+                getSpeed(){
+                   
+                    return this.speed;
+                }
+                getStr(){
+                    return this.strength;
+                }
+                sayName() {
+                    console.log(`My name is ${this.name}`);
+                    return this;
+                }
+                showStats() {
+                    console.log(`Health: ${this.health} Speed: ${this.getSpeed()} Strength: ${this.getStr()}`);
+                    return this;
+                }
+                drinkSake() {
+                    this.health += 10;
+                    return this;
+                }
+                punch(target) {
+                    if(target instanceof Ninja){
+                        target.health -= 5;
+                        console.log(`${target.name} was punched by ${this.name} and lost 5 health!`);
+                        return this;
+                    }
+                }
+                kick(target) {
+                    if(target instanceof Ninja){
+                    target.health -= 15;
+                    console.log(`${target.name} was kicked by ${this.name} and lost 15 health!`)
+                    return this;
+                    }
+                }
+            }
+            Musashi = new Ninja('Musashi')
+            Bruce = new Ninja('Bruce Lee')
+            Musashi.punch(Bruce).kick(Bruce)
+            Musashi.drinkSake().showStats()
+        </script>
+    </head>
+</html>   

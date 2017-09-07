@@ -1,0 +1,22 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       
+       
+    </head>
+    <body>
+        <header>
+           <h1>Add a Comment</h1>
+        </header>
+        <main>
+        <h4>Comment</h4>
+           <form action='/add_comment' method='post'>
+        {% csrf_token %}
+        <textarea rows="5" cols="40"></textarea><br>
+        <input type='submit' value='Submit'>
+            
+           <a href="/comment">Add Comment</a>
+        <a href="/dashboard">Back</a>
+        </main>   
+    </body>
+</html>

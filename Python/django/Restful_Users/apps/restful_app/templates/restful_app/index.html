@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script>
+            "use strict";
+
+        </script>
+    </head>
+    <body>
+        <header>
+            
+            <h1>Users</h1>
+        </header>
+        <main>
+           <ul style=list-style:none>
+            <table class="table table-striped">
+                <tr>
+                    <th>id</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+                {% for each in users %}
+                <tr>
+                    <td>{{each.id}}</td>
+                    <td>{{each.first_name}} {{each.last_name}}</td>
+                    <td>{{each.email}}</td>
+                    <td>{{each.created_at}}</td>
+                    <td> <a href="/user/{{each.id}}">Show</a> <a href="/edit/{{each.id}}">Edit</a> <a href="/destroy/{{each.id}}">Delete</a></td>
+                </tr>
+                {% endfor %} 
+                </table>
+            
+        </ul>
+            <a href="/new">Add a new user</a>
+        </main>
+
+    </body>
+</html>   
