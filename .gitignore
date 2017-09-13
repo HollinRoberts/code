@@ -1,3 +1,4 @@
+*.zip
 node_modules
 venv/
 Python/myenvironments
