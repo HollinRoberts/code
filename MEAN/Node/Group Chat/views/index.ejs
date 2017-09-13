@@ -1,0 +1,57 @@
+<html>
+        <head>
+        <title></title>
+            <link rel='stylesheet' href='/stylesheets/style.css'>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+            <script type ="text/javascript">
+                 $(document). ready(function (){
+                    $('#msg').submit(function (event) {
+                        event.preventDefault();    
+                        socket.emit("post",   
+                            $('#post').val(),                         
+                             );
+                        });
+                    var socket  = io.connect();
+                    socket.on('on_load', function (data) {
+                       
+                        for(var i = 0 ; i<data.chat.length ; i++){
+                            console.log(i);
+                            console.log(data[i]);
+                            var node = document.createElement("P");
+                            console.log(i);
+                            console.log(node);
+                            node.innerHTML=data.chat[i];
+                            console.log(node);
+                            chat.appendChild(node);  
+                        }                
+                        var person = prompt("Please enter your name", "Enter a name");
+                        socket.emit("login",person)
+                        
+                    });
+                    socket.on('update', function (data) {
+                        var node = document.createElement("P");
+                        node.innerHTML=data.chat[data.chat.length-1];
+                        console.log(node);
+                        chat.appendChild(node);
+                            
+                         
+                        document.getElementById('post').value=''
+                      
+                    });
+            
+                })
+            </script>
+        </head>
+        <body>
+            <h3>Conversation Board</h3>
+            <div id="chat">
+            </div>
+            <form id='msg' action="">
+                <textarea id="post" rows="1" cols="100"></textarea>
+                <input type="submit" value="submit">
+            </form>
+        </body>
+        </html>
+    
+    

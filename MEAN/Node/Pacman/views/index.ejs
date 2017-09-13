@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/style.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+                var socket = io.connect();
+                
+                socket.on('move', function (data) {
+                    // var resp = document.getElementById('msg');
+                    // resp.innerHTML = data.count;
+                    // console.log('in update')
+                    // console.log(data)
+                    // console.log(data[0])
+                    pacman.x=data[0].x;
+                    pacman.y=data[0].y;
+                    console.log(pacman)
+                    world=data[0].world
+                    score=data[0].score
+                    displayPacman()
+                    updateScore()
+                    displayWorld()
+                });
+                var usercount=0
+                var world = [
+                    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                    [2, 0, 1, 1, 1, 1, 2, 1, 1, 2],
+                    [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+                    [2, 1, 2, 1, 2, 1, 1, 2, 1, 2],
+                    [2, 1, 1, 1, 1, 2, 1, 1, 1, 2],
+                    [2, 1, 1, 1, 1, 2, 1, 1, 1, 2],
+                    [2, 1, 1, 2, 1, 2, 1, 1, 1, 2],
+                    [2, 1, 1, 1, 1, 2, 1, 1, 1, 2],
+                    [2, 1, 1, 1, 1, 1, 2, 1, 1, 2],
+                    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                ];
+
+                var pacman = {
+                    user: null,
+                    x: 1,
+                    y: 1,
+                }
+                var ghost1 = {
+                    user:null,
+                    x: 8,
+                    y: 8,
+                }
+                var pacman = {
+                    x: 1,
+                    y: 1,
+                }
+                var pacman = {
+                    x: 1,
+                    y: 1,
+                }
+
+                function displayWorld() {
+                    // console.log('display world')
+                    var output = '';
+                    for (var i = 0; i < world.length; i++) {
+                        output += "<div class='row'>";
+                        for (var j = 0; j < world.length; j++) {
+                            if (world[i][j] == 2) {
+                                output += "<div class='brick'></div>";
+                            }
+                            else if (world[i][j] == 1) {
+                                output += "<div class='coin'></div>";
+                            }
+                            else if (world[i][j] == 0) {
+                                output += "<div class='empty'></div>";
+                            }
+
+                        }
+                        output += "</div>"
+                    }
+                    // console.log(output)
+                    document.getElementById('world').innerHTML = output;
+                }
+                function displayPacman() {
+                    document.getElementById('pacman').style.left = pacman.x * 20 + "px";
+                    document.getElementById('pacman').style.top = pacman.y * 20 + "px";    
+                }
+                function displayGhost1() {
+                    document.getElementById('ghost1').style.left = pacman.x * 20 + "px";
+                    document.getElementById('ghost1').style.top = pacman.y * 20 + "px";   
+                }
+                var score = 0
+                function updateScore() {
+                    document.getElementById('score').innerHTML ="Your Score: "+score;
+
+                }
+                displayWorld();
+                displayPacman();
+                document.onkeydown = function (e) {
+                    
+                    if (e.keyCode == 40 && world[pacman.y + 1][pacman.x] !== 2) {
+                        pacman.y++
+                    }
+                    if (e.keyCode == 39 && world[pacman.y][pacman.x + 1] !== 2) {
+                        pacman.x++
+                    }
+                    if (e.keyCode == 37 && world[pacman.y][pacman.x - 1] !== 2) {
+                        pacman.x--
+                    }
+                    if (e.keyCode == 38 && world[pacman.y - 1][pacman.x] !== 2) {
+                        pacman.y--
+                    }
+                    if (world[pacman.y][pacman.x] == 1) {
+                        world[pacman.y][pacman.x] = 0;
+                        
+                        score++
+                        updateScore()
+                        displayWorld();
+                    }
+                    socket.emit("move", {position: pacman, world:world, score: score}
+                        );
+                    displayPacman();
+                }
+
+                $('#msg').submit(function (event) {
+                    event.preventDefault();
+                    socket.emit("post",
+                        $('#post').val(),
+                    );
+                });
+                
+                var socket = io.connect();
+                socket.on('on_login', function(data){
+                    console.log('in_login')
+                    var user=data
+                    console.log(user)
+                })
+                socket.on('on_load', function (data) {
+                    if(!pacman.user){
+                        console.log('in pacman if')
+                        pacman.user=data.user
+                        console.log(pacman.user)
+                    }
+                    else if(data.connected.includes(pacman.user)!== true){
+                        console.log('in pacman elseif')
+                        pacman.user=data.user
+                    }
+                    else if(!ghost1.user){
+                        ghost1.user=data.user
+                    }
+                    else if(data.connected.includes(ghost1.user)!== true){
+                        ghost1.user=data.user
+                    }
+                    for (var i = 0; i < data.chat.length; i++) {
+                        // console.log(i);
+                        // console.log(data[i]);
+                        var node = document.createElement("P");
+                        // console.log(i);
+                        // console.log(node);
+                        node.innerHTML = data.chat[i];
+                        // console.log(node);
+                        chat.appendChild(node);
+                    }
+                    
+                   
+                    var person = prompt("Please enter your name", "Enter a name");
+                    
+                    socket.emit("login", {person: person, position: pacman})
+
+                });
+                socket.on('update', function (data) {
+                    var node = document.createElement("P");
+                    node.innerHTML = data.chat[data.chat.length - 1];
+                    // console.log(node);
+                    chat.appendChild(node);
+
+
+                    document.getElementById('post').value = ''
+
+                });
+
+            })
+
+        
+        
+    </script>
+</head>
+
+<body>
+    <div id='container'>
+        <div id='world'></div>
+        <div id='pacman'></div>
+        <div id='ghost1'></div>
+    </div>
+    <div id="score">0</div>
+    <div id="chatbot"><h3>Conversation Board</h3>
+    <div id="chat">
+    </div>
+    <form id='msg' action="">
+        <input id="post" type='text'>
+        <input type="submit" value="submit">
+    </form>
+    </div>
+    <div id="other">
+
+    </div>
+</body>
+
+</html>
+      

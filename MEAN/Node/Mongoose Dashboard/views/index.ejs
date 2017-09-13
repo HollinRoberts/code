@@ -1,0 +1,29 @@
+<html>
+        <head>
+        <title></title>
+            <link rel='stylesheet' href='/stylesheets/style.css'>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           
+            <script type ="text/javascript">
+            </script>
+        </head>
+        <body>
+            <h1>Fenec!</h1>
+       
+            <% if(typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                 <h3><%= errors[x].title %></h3>
+                <% } %>
+            <% } %>
+            <% for(idx in fenec) {%>
+                <a href="/fenec/<%=fenec[idx]._id%>"><%=fenec[idx].name%></a>, age: <%=fenec[idx].age%>
+                <br>
+                <%}%>
+                <br>
+            <form action="/fenec/new" method="get">
+                <input type="submit" value="Add a Fenec">
+            </form>
+            
+
+        </body>
+        </html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+    <title></title>
+        <link rel='stylesheet' href='/stylesheets/style.css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h1>Here are the awesome quotes!</h1>
+        <% for(idx in quotes) {%>
+            "<%=quotes[idx].quote%>"
+            <br>
+            -<%=quotes[idx].name%> at
+            <% date = new Date(quotes[idx].createdAt)%>
+            <%  var options= {hour:'numeric', minute:'numeric'}
+                var h = date.toLocaleTimeString('en-US', options);
+                var m= date.getMinutes()
+                var options= {month:'long', day:'numeric', year:'numeric'}
+                var d =date.toLocaleDateString('en-US',options);
+                %>
+               
+                <%=h %> <%=d%>
+                <br>
+            <br>
+
+
+            <%}%>
+
+    </body>
+    </html>
