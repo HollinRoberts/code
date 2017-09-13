@@ -1,0 +1,44 @@
+<html>
+        <head>
+        <title></title>
+            <link rel='stylesheet' href='/stylesheets/style.css'>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+            <script type ="text/javascript">
+                 $(document). ready(function (){
+              
+                    var socket  = io.connect();
+       
+                    $('#add').submit(function (event) {
+                        event.preventDefault();    
+                        socket.emit("add", {                              
+                             });
+                        });
+                    $('#reset').submit(function (event) {
+                        event.preventDefault();    
+                        socket.emit("reset", {                                 
+                             });
+                        });    
+                    socket.on('update', function (data) { 
+                        var resp = document.getElementById('msg');
+                        resp.innerHTML=data.count;
+                   
+                      
+                    });
+                    
+                })
+            </script>
+        </head>
+        <body>
+            <div><p id="msg">Push the button to join the game!</p><p id="response"></p>
+            </div>
+            <form id='add' action="" method="">
+                    <input type="submit"  value="Push the Epic Button">
+            </form>
+            <form id='reset' action="" method="">
+                    <input type="submit"  value="Reset Count">
+            </form>
+        </body>
+        </html>
+    
+    

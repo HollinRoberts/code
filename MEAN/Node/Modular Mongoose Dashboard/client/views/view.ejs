@@ -1,0 +1,24 @@
+<html>
+        <head>
+        <title></title>
+            <link rel='stylesheet' href='/stylesheets/style.css'>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           
+            <script type ="text/javascript">
+            </script>
+        </head>
+        <body>
+            <h1>Welcome! Edit a Fenec</h1>
+        
+                <%=fenec.name%>, age: <%=fenec.age%>
+                <br>
+            
+                <br>
+            <form action="/fenec/edit/<%=fenec._id%>" method="get">
+                <input type="submit" value="Edit a Fenec!">
+            </form>
+            <form action="/fenec/destroy/<%=fenec._id%>" method="Post">
+                <input type="submit" value="Delete a Fenec!">
+            </form>
+        </body>
+        </html>

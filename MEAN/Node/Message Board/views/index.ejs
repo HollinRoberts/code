@@ -1,0 +1,52 @@
+<html>
+        <head>
+        <title></title>
+            <link rel='stylesheet' href='/stylesheets/style.css'>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+           
+            <script type ="text/javascript">
+            </script>
+        </head>
+        <body>
+            <h1>The Dojo Message Board</h1>
+            <% if(typeof(errors) != 'undefined' ) { %>
+               
+                <% for (var x in errors) { %>
+                   
+                    <% console.log('test')%>
+                   <% console.log(errors[x])%>
+                 <h3><%= errors[x].message %></h3>
+                <% } %>
+            <% } %>
+            <form action="/message" method="post">
+                Name:<br><input type="text" name="name"><br>
+                Message:<br><input type="text" name="message"><br>              
+                <input type="submit" value="Post Message ">
+            </form>
+
+            
+
+
+            <% if(message != 'undefined' ) { %>
+            <% for(idx in message) {%>
+                <h3>Name: <%=message[idx].name%></h3>
+                <h4>Message: <%=message[idx].text%></h4>
+                <% for(var i =0 ; i<message[idx].comments.length; i++){%> 
+                        &emsp; Name: <%=message[idx].comments[i].name%><br>
+                        &emsp; Comment: <%=message[idx].comments[i].text%><br>
+                    <br>
+                    <%}%>
+                    <br>
+                <form action="/comment/<%=message[idx]._id%>" method="post">
+                    Name:<br><input type="text" name="name"><br>
+                    Comment:<br><input type="text" name="comment"><br>              
+                    <input type="submit" value="Post Comment">
+                </form>
+                <%}%>
+                <%}%>
+                <br>
+            
+            
+
+        </body>
+        </html>
