@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    US Time Zone Display!
+  </h1>
+</div>
+<button (click)="toggle(1)" [ngClass]="{'timezone':true,'clicked':1===toggled}">PST</button>
+<button (click)="toggle(2)" [ngClass]="{'timezone':true,'clicked':2===toggled}">MST</button>
+<button (click)="toggle(3)" [ngClass]="{'timezone':true,'clicked':3===toggled}">CST</button>
+<button (click)="toggle(4)" [ngClass]="{'timezone':true,'clicked':4===toggled}">EST</button>
+<button (click)="toggle(0)" [ngClass]="{'timezone':true,'clicked':5===toggled}">Clear</button>
+<h2 *ngIf='toggled'>{{date | date:'medium' }}</h2>
+
+
