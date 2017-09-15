@@ -1,5 +1,4 @@
-var mongoose= require('mongoose');
-var Task = mongoose.model('Task');
+
 var Task = require('../controllers/tasks.js');
 module.exports = function(app){
 
