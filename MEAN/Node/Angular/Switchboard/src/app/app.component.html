@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Switchboard!
+  </h1>
+</div>
+<button *ngFor='let vals of switchboard; let idx = index' (click)="toggle(idx)" [ngClass]="{'off':'off'===vals,'on':'on'===vals}">{{vals}}</button>
+
+
+
+
