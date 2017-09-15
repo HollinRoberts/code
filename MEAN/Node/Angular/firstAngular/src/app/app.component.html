@@ -19,4 +19,6 @@
      <td>{{each.content}}</td>
    </tr>
  </table>
-
+<div>
+<div *ngFor="let each of colors" [ngStyle]="{'background-color':each,'width.px':40,'height.px':40,'display':'inline-block'}"></div>
+</div>
