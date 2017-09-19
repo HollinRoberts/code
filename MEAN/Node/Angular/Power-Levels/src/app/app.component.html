@@ -1,0 +1,17 @@
+<main>
+  Initial Power Level:<form (submit)="onSubmit()">
+    
+        <input type="number" name="powerlvl" min="1" max="100" [(ngModel)]="user.power" #power='ngModel'>
+        <input type="submit" value="Calculate Powers">
+    
+  </form>
+  <div class="output">
+  <div class="human"><app-human [powers]='powers'></app-human></div>
+  <div class="saiyan"><app-saiyan [powers]='powers'></app-saiyan></div>
+  <div class="ss"><app-super-saiyan [powers]='powers'></app-super-saiyan></div>
+  <div class="ss2"><app-super-saiyan-two [powers]='powers'></app-super-saiyan-two></div>
+  <div class="ss3"><app-super-saiyan-three [powers]='powers'></app-super-saiyan-three></div>
+  <div class="ss4"><app-super-saiyan-four [powers]='powers'></app-super-saiyan-four></div>
+</div>
+</main>
+

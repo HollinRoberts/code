@@ -1,0 +1,17 @@
+div{
+    background-color: tan;
+    width:28%;
+    height: 200px;
+    display: inline-block;
+    margin:20px;
+    padding: 20px;
+}
+form{
+    display: inline-block;
+}
+.output{
+    display: block;
+    width: 100%;
+    background-color: white;
+    height:50%
+}
