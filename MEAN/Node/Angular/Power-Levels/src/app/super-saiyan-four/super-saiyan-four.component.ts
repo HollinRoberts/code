@@ -12,5 +12,6 @@ export class SuperSaiyanFourComponent implements OnInit {
   ngOnInit() {
   }
   @Input() powers;
-  powerlvl=this.powers*500
+  powerlvl=this.powers*500;
+  
 }

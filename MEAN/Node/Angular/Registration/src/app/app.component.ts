@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  
+  users=[]
   temp;
   onSubmit(){
-    this.temp=1
+    this.users.push(this.user)
     console.log("submitted")
+    console.log(this.users)
   }
   user={
     first:"",
