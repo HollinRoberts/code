@@ -51,7 +51,7 @@
           maxlength="32"
           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,32}"
           [(ngModel)]="user.confirm" #confirm='ngModel'
-          ><span *ngIf="confirm.touched && !confirm.valid"> Password Confirmation Required</span><span *ngIf="confirm.errors?.minlength"> Must be at least 6 chars long</span><br>
+          ><span *ngIf="confirm.touched && !confirm.valid"> Password Confirmation Required</span><span *ngIf="confirm.errors?.minlength"> Must be at least 6 chars long</span><span *ngIf="user.password !=user.confirm && confirm.touched"> Passwords must match</span><br>
           Street Address:<input 
           type="text" 
           name="street"

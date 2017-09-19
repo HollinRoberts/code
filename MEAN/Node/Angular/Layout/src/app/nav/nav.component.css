@@ -1,0 +1,16 @@
+a{
+    background-color: white;
+    padding: 10px 20px;
+    width: 200px;
+    height:20px;
+    border: 2px solid black;
+    display: block;
+    margin:10px;
+    
+    text-align: center;
+}
+body{
+    background-color: lightskyblue;
+    margin-left: 50px;
+    margin-top: 50px;
+}

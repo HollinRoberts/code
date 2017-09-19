@@ -1,0 +1,21 @@
+header{
+    border: 2px solid black;
+    background-color: lightskyblue;
+    width: 1050px;
+}
+.main{
+    border: 2px solid black;
+    background-color: lightskyblue;
+    width: 600px;
+}
+.nav{
+    border: 2px solid black;
+    background-color: lightskyblue;
+    width: 400px;
+    height: 600px;
+}
+div,header{
+    margin: 25px;
+    display: inline-block;
+    vertical-align: top
+}
