@@ -1,31 +1,31 @@
 
 <div class="submit">
   <h2>Add a Quote</h2>
-  <form (ngSubmit)='onSubmit(quoteSubmit.value)' name="quoteSubmit" #quoteSubmit='ngForm'>
+  <form (submit)='onSubmit()' name="quoteSubmit" #quoteSubmit='ngForm'>
     <textarea 
-    name="quote"
+    name="content"
     cols="30" 
     rows="10" 
     minlength="4" 
     required
-    [(ngModel)]="quote.quote" #quote='ngModel'
+    [(ngModel)]="quotes.content" #content='ngModel'
     ></textarea>
-    <span *ngIf="quote.touched && !quote.valid">Quote is required</span><span *ngIf="quote.errors?.minlength"> Must be at least 4 chars long</span><br>
+    <span *ngIf="content.touched && !content.valid">Quote is required</span><span *ngIf="content.errors?.minlength"> Must be at least 4 chars long</span><br>
     
     Author: <input 
     type="text" 
     name="author" 
     minlength="1" 
     required 
-    [(ngModel)]="quote.author" #author='ngModel'
+    [(ngModel)]="quotes.author" #author='ngModel'
     >
     <span *ngIf="author.touched && !author.valid"> Author is Required</span><span *ngIf="author.errors?.minlength"> Must be at least 1 char</span><br>
     <input type="submit" value="Add Quote" [disabled]='quoteSubmit.invalid'>
   </form>
 </div>
-
+{{quotes.content|json}}{{quotes.author|json}}
 <div class="show">
-    <div *ngFor='let each of quoteList'><p>'{{each.quote}}'<br> -{{each.author}}</p>
+    <div *ngFor='let each of list'><p>'{{each.content}}'<br> -{{each.author}}</p>
     
     
     </div>

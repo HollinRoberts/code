@@ -8,15 +8,16 @@ import {Quote} from './quote';
 })
 export class AppComponent {
 
-  quote= new Quote();
-  quoteList=[];
+  quotes= new Quote();
+  list=[];
 
   onSubmit(form){
     console.log('in submit');
-    console.log(form);
-    this.quoteList.push(form);
-    
-    console.log(this.quoteList);
+    // console.log(form);
+    console.log(this.quotes)
+    this.list.push(this.quotes);
+    this.quotes= new Quote();
+    console.log(this.list[0]);
   }
  
 }
