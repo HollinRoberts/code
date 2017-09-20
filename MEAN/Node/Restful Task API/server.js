@@ -13,6 +13,6 @@ require("./server/config/mongoose.js")
 var routes_setter=require('./server/config/routes.js');
 routes_setter(app);
 
-var server = app.listen(8000, function() {
+var server = app.listen(1337, function() {
     console.log("listening on port 8000");
 });

@@ -1,0 +1,12 @@
+<h1>Git Hub Score</h1>
+<form (ngSubmit)='onSubmit()' name="git" #git='ngForm'>
+  Github Username:<input type="text" name="username" required minlength="1" [(ngModel)]="user.username" #username='ngModel'>
+  <input type="submit" value="Calculate my Github Score" [disabled]='git.invalid'>
+</form>
+<div *ngIf='!score==0'><h2>Your Score: {{results.public_repos+results.followers}}</h2>
+<span *ngIf='results.public_repos+results.followers<20'>"Needs Work!"</span>
+<span *ngIf='results.public_repos+results.followers<50 && results.public_repos+results.followers> 19'>"A decent start!"</span>
+<span *ngIf='results.public_repos+results.followers<100 && results.public_repos+results.followers> 49'>"Doing Good!"</span>
+<span *ngIf='results.public_repos+results.followers<200 && results.public_repos+results.followers> 99'>"Great Job!"</span>
+<span *ngIf='results.public_repos+results.followers>=200'>"Github Elite!"</span>
+</div>
