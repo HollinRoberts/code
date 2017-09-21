@@ -1,0 +1,26 @@
+<h2>Create Product</h2>
+<form name="create" (ngSubmit)='onSubmit()' #create='ngForm'>
+  Title: <input 
+  type="text" 
+  name="title"  
+  required
+  minlength="4"
+  [(ngModel)]='product1.title' #title='ngModel'
+  ><span *ngIf="title.touched && !title.valid">Title is required</span><span *ngIf="title.errors?.minlength"> Must be at least 4 chars long</span><br>
+  
+  Price: <input
+  type="text" 
+  name="price" 
+  [(ngModel)]='product1.price' #price='ngModel'
+  required><span *ngIf="price.touched && !price.valid">Price is required</span><span *ngIf="price.errors?.minlength"> Must be at least 4 chars long</span><br>
+
+  Image Url: <input 
+  type="text" 
+  name="imgurl" 
+  [(ngModel)]='product1.img' #imgurl='ngModel'
+  ><br>
+ 
+  <input type="submit" value="Create" [disabled]='create.invalid'>
+
+</form>
+{{product1.title}}
