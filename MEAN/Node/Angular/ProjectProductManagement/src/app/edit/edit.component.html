@@ -1,0 +1,28 @@
+<h2>Edit Product</h2>
+<form name="edit" (ngSubmit)='onSubmit(edit.value)' #edit='ngForm'>
+  Title: <input 
+  type="text" 
+  name="title"
+
+  required
+  minlength="4"
+  
+  [(ngModel)]='form.title' #title='ngModel'
+  ><span *ngIf="title.touched && !title.valid">Title is required</span><span *ngIf="title.errors?.minlength"> Must be at least 4 chars long</span>
+  <br>
+  Price: <input type="text" 
+  name="price" 
+  [(ngModel)]='form.price' #price='ngModel'
+  required><span *ngIf="price.touched && !price.valid">Price is required</span><br>
+
+  Image Url: <input 
+  type="text" 
+  name="imgurl" 
+  [(ngModel)]='form.img' #imgurl='ngModel'
+  ><br>
+  <button (click)='delete()'>Delete</button>
+  <input type="submit" value="Update" [disabled]='edit.invalid'>
+
+</form>
+
+{{form.title}}

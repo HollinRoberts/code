@@ -1,0 +1,8 @@
+<div *ngFor='let each of products'>
+    <img src="{{each.img}}" alt="">
+  <p>'{{each.title}}<br> {{each.price}}</p>{{each.id}}
+  
+  <form><button (click)="delete(each.id)">Delete</button>
+  <button [routerLink]="[each.id,'Edit']">Edit</button></form>
+  
+  </div>
