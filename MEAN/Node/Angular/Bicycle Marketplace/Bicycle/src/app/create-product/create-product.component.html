@@ -1,0 +1,91 @@
+<div *ngIf="!product"><form (ngSubmit)="newProduct()" name="login" #login='ngForm' >
+    Image Upload: <input
+      type="text"
+      name="img"
+     
+      required
+      [(ngModel)]="create.img" #img='ngModel'
+      ><br>
+    Title: <input 
+      type="text" 
+      name="title"
+      required
+      minlength="6"
+      maxlength="32"
+      
+      [(ngModel)]="create.title" #title='ngModel'
+      ><br>
+    Description: <textarea name="description" id="" cols="30" rows="10"
+    required
+    minlength="6"
+    maxlength="200"
+    
+    [(ngModel)]="create.description" #desc='ngModel'
+    ></textarea> <br>
+    Price: <input 
+    type="number" 
+    name="price"
+    required
+    min="1"
+    
+    [(ngModel)]="create.price" #price='ngModel'
+    ><br>
+    Location: <input 
+    type="text" 
+    name="location"
+    required
+    minlength="1"
+    
+    [(ngModel)]="create.location" #location='ngModel'
+    ><br>
+    <input type="submit" value="Create">
+  </form></div>
+
+  <div *ngIf="product">
+  
+  <form (ngSubmit)="update()" name="login" #login='ngForm' >
+      Image Upload: <input
+        type="text"
+        name="img"
+        value="test"
+        required
+        [(ngModel)]="product.img" #img='ngModel'
+        ><br>
+      Title: <input 
+        type="text" 
+        name="title"
+        required
+        minlength="6"
+        maxlength="32"
+        
+        [(ngModel)]="product.title" #title='ngModel'
+        ><br>
+
+      Description: <textarea name="description" id="" cols="30" rows="10"
+      required
+      minlength="6"
+      maxlength="200"
+      
+      [(ngModel)]="product.description" #desc='ngModel'
+      ></textarea> <br>
+
+      Price: <input 
+      type="number" 
+      name="price"
+      required
+      min="1"
+      
+      [(ngModel)]="product.price" #price='ngModel'
+      ><br>
+      Location: <input 
+      type="text" 
+      name="location"
+      required
+      minlength="1"
+      
+      [(ngModel)]="product.location" #location='ngModel'
+      ><br>
+      <input type="submit" value="Update">
+     
+    </form> <button (click)="deletethis(product)">Delete</button>
+  </div>

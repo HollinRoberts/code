@@ -1,0 +1,6 @@
+Question:{{question.question|json}}
+<form>
+    Answer 1:<input type="radio" name="q1" value="true" [(ngModel)]="newQuestion.fake1" #fake1='ngModel'>{{question.correct|json}}<br>
+    Answer 2:<input type="radio" name="q1" value="false">{{question.fake1|json}}<br>
+    Answer 3:<input type="radio" name="q1" value="false">{{question.fake2|json}}<br> 
+</form>

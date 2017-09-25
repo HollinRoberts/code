@@ -8,7 +8,7 @@
       <h1>Welcome!</h1>
       <div *ngIf="1===temp"><p>Thank you for registering with us {{user.first}}. We just sent you a confirmation email at {{user.email}}, and we will send all mail to {{user.street}}, {{user.city}} {{user.state}}. <br><br> Have a wonderful day!</p></div>
       <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)" > -->
-      <form (submit)="onSubmit()" name="myForm" #myForm='ngForm' >
+      <form (ngSubmit)="onSubmit()" name="myForm" #myForm='ngForm' >
           First Name: <input
           type="text" 
           name="first" 

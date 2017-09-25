@@ -1,0 +1,43 @@
+<h1>New Question</h1>
+
+<div ><form (ngSubmit)="addQuestion()" name="questions" #questions='ngForm' >
+    
+    Question: <textarea 
+    name="question" id="" cols="30" rows="10"
+    required
+    minlength="15"
+    
+    [(ngModel)]="newQuestion.question" #question='ngModel'
+    ></textarea> <br>
+
+    Correct Answer: <input 
+    type="text" 
+    name="correct"
+    required
+    minlength="1"
+    [(ngModel)]="newQuestion.correct" #correct='ngModel'
+    ><br>
+
+    Fake Answer 1: <input 
+    type="text" 
+    name="fake1"
+    required
+    minlength="1"
+    
+    [(ngModel)]="newQuestion.fake1" #fake1='ngModel'
+    ><br>
+
+    Fake Answer 2: <input 
+    type="text" 
+    name="fake2"
+    required
+    minlength="1"
+    
+    [(ngModel)]="newQuestion.fake2" #fake2='ngModel'
+    ><br>
+
+    <button type="button" [routerLink]="['/Home']" >Cancle</button>
+  
+    <input type="submit" value="Add Question" [disabled]="questions.invalid">
+  </form></div>
+

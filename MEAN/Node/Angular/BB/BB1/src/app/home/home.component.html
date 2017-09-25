@@ -1,0 +1,24 @@
+<body><div class="results" *ngIf="score"><p>That was great,{{user}}! Your score is {{results.score}}{{results.percentage}}</p></div>
+
+<div class="play">
+  <button (click)="play()" class="playbutton">Play</button><br>
+  <p>Click the Button above to start the trivia game.</p>
+</div>
+<div class="score">
+  <form (ngSubmit)="onSearch()" name="search" >
+    <input type="text"
+    
+    >
+  </form>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Percentage</th>
+    </tr>
+    <tr>
+
+    </tr>
+  </table>
+</div>
+</body>
