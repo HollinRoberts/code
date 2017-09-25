@@ -1,0 +1,76 @@
+<h3>Bike of the Day!</h3>
+{{error|json}}
+<app-product [bicycle]="product"></app-product>
+<div class="log">
+  <form (ngSubmit)="onLogin()" name="login" #login='ngForm' >
+    Email: <input
+      type="text"
+      name="email"
+     
+      required
+      pattern="[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+"
+      [(ngModel)]="login1.email" #loginemail='ngModel'
+      ><span *ngIf="loginemail.touched && !loginemail.valid"> Email is Required</span><span *ngIf="loginemail.errors?.pattern"> Not a validemail</span><br>
+    Password: <input 
+      type="password" 
+      name="password"
+      required
+      minlength="6"
+      maxlength="32"
+      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,32}"
+      [(ngModel)]="login1.password" #loginpassword='ngModel'
+      ><span *ngIf="loginpassword.touched && !loginpassword.valid"> First name is Required</span><span *ngIf="loginpassword.errors?.minlength"> Must be at least 6 chars long</span><span *ngIf="loginpassword.errors?.pattern"> Must have an uppercase, alowercase, a number, and a character.</span><br>
+    <input type="submit" value="Login" [disabled]='login.invalid'><br>
+  </form>
+
+</div>
+<div class="register">
+  <form (ngSubmit)="onSubmit()" name="myForm" #myForm='ngForm' >
+    First Name: <input
+    type="text" 
+    name="first" 
+    required
+    minlength="2"
+    maxlength="20"
+    [(ngModel)]="user1.first" #first='ngModel'
+    ><span *ngIf="first.touched && !first.valid"> First name is Required</span><span *ngIf="first.errors?.minlength"> Must be at least 2 chars long</span>  <br>
+
+    Last Name: <input 
+    type="text" 
+    name="last"
+    required
+    minlength="2"
+    maxlength="20"
+    [(ngModel)]="user1.last" #last='ngModel'
+    ><span *ngIf="last.touched && !last.valid"> Last name is Required</span><span *ngIf="last.errors?.minlength"> Must be at least 2 chars long</span><br>
+
+    Email: <input
+    type="text"
+    name="email"
+    value=""
+    required
+    pattern="[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+"
+    [(ngModel)]="user1.email" #email='ngModel'
+    ><span *ngIf="email.touched && !email.valid"> Email is Required</span><span *ngIf="email.errors?.pattern"> Not a valid email</span><br>
+    Password: <input 
+    type="password" 
+    name="password"
+    required
+    minlength="6"
+    maxlength="32"
+    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,32}"
+    [(ngModel)]="user1.password" #password='ngModel'
+    ><span *ngIf="password.touched && !password.valid"> First name is Required</span><span *ngIf="password.errors?.minlength"> Must be at least 6 chars long</span><span *ngIf="password.errors?.pattern"> Must have an uppercase, a lowercase, a number, and a character.</span><br>
+    Confirm Password:<input 
+    type="password" 
+    name="confirm"
+    required
+    minlength="6"
+    maxlength="32"
+    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,32}"
+    [(ngModel)]="user1.confirm" #confirm='ngModel'
+    ><span *ngIf="confirm.touched && !confirm.valid"> Password Confirmation Required</span><span *ngIf="confirm.errors?.minlength"> Must be at least 6 chars long</span><span *ngIf="user1.password !=user1.confirm && confirm.touched"> Passwords must match</span><br>
+    <input type="submit" value="Register" [disabled]='myForm.invalid'><br>
+  </form>
+ 
+</div>

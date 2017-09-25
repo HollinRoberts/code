@@ -1,0 +1,11 @@
+<a [routerLink]="['/Browse']">Browse</a> |
+<a [routerLink]="['/User']">My Listings</a> |
+<button onclick="logoff()">Log Off</button>
+
+<form (ngSubmit)="onLogin()" name="login" #login='ngForm' >
+    Search: <input
+      type="text"
+      name="search"
+      [(ngModel)]="search1.seach" #seach='ngModel'>
+</form>
+{{search1|json}}

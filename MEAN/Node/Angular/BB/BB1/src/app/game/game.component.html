@@ -1,0 +1,40 @@
+<p>
+  Hi {{user}}!
+</p>
+<p>Choose an answer for each of the questions and submit the teset once done.</p>
+<p>Good Luck!</p>
+
+<!-- <app-question *ngFor="let i of gameQuestions" [question]="i"></app-question> -->
+
+<div>
+<form (ngSubmit)="results()" name="results" #results='ngForm'>
+    Question 1:{{gameQuestions[0].question}}<br>
+    Answer 1:<input type="radio" name='q1' value="true" [(ngModel)]="result.question1" #q1='ngModel'>{{gameQuestions[0].correct|json}}<br>
+    Answer 2:<input type="radio" name='q1' value="false" [(ngModel)]="result.question1" #q1='ngModel'>{{gameQuestions[0].fake1|json}}<br>
+    Answer 3:<input type="radio" name='q1' value="false" [(ngModel)]="result.question1" #q1='ngModel'>{{gameQuestions[0].fake2|json}}<br>
+
+    Question 2:{{gameQuestions[1].question}}<br>
+    Answer 1:<input type="radio" name='q2' value="true"  [(ngModel)]="result.question2" #q2='ngModel'>{{gameQuestions[1].correct|json}}<br>
+    Answer 2:<input type="radio" name='q2' value="false" [(ngModel)]="result.question2" #q2='ngModel'>{{gameQuestions[1].fake1|json}}<br>
+    Answer 3:<input type="radio" name='q2' value="false" [(ngModel)]="result.question2" #q2='ngModel'>{{gameQuestions[1].fake2|json}}<br> 
+
+    Question 3:{{gameQuestions[2].question}}<br>
+    Answer 1:<input type="radio" name='q3' value="true"  [(ngModel)]="result.question3" #q3='ngModel'>{{gameQuestions[2].correct|json}}<br>
+    Answer 2:<input type="radio" name='q3' value="false" [(ngModel)]="result.question3" #q3='ngModel'>{{gameQuestions[2].fake1|json}}<br>
+    Answer 3:<input type="radio" name='q3' value="false" [(ngModel)]="result.question3" #q3='ngModel'>{{gameQuestions[2].fake2|json}}<br> 
+    <button type="button" [routerLink]="['/Home']" >Cancle</button>
+    <input type="submit" value="Submit">
+</form>
+</div><br>
+{{result|json}}
+<!-- <div
+{{question[0].question}}
+
+
+Answer 1:<input type="radio" name={{i.id}} value="true" >{{i.correct|json}}<br>
+Answer 2:<input type="radio" name={{i.id}} value="false">{{i.fake1|json}}<br>
+Answer 3:<input type="radio" name="i.id" value="false">{{i.fake2|json}}<br> 
+
+</div><br> -->
+
+
