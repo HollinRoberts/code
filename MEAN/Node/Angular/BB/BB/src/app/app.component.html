@@ -1,7 +1,9 @@
 <body>
+
 <a [routerLink]="['/Home']">Home</a> |
 <a [routerLink]="['/New']">Add a Question</a> |
-<a [routerLink]="['/Logout']">Logout</a>
+<a class="logout" (click)="logout()">Logout</a>
+<!-- <a [routerLink]="['/Logout']">Logout</a> -->
 
 <router-outlet></router-outlet>
 </body>

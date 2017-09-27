@@ -1,0 +1,13 @@
+body{
+    padding: 20px;
+}
+.logout{
+    text-decoration: underline;
+    color: purple;
+    cursor: pointer;
+    cursor: hand;
+}
+a{ 
+    display: inline-block;
+    text-align: right;
+}

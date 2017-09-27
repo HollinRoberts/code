@@ -1,0 +1,17 @@
+<a [routerLink]="['/dashboard']">Go to Polls</a>
+<h3>{{game.question|json}}?</h3>
+<p>Click the Value button to choose one.</p>
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let i of game.options ; let x = index">
+      <td>{{i}}</td>
+      <td>{{game.count[x]}}</td>
+      <td><button (click)="vote(game._id,x)" >Vote</button></td>
+
+  </tr>
+</table>
+{{game|json}}

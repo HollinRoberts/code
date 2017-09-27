@@ -8,10 +8,13 @@ export class TaskService {
   user=[]
   error=[]
   questions=[]
+  scores=[]
+  score=null
 
   constructor(private _http: Http,private _redirect:Router) { }
     userObserver = new BehaviorSubject(this.user);
     questionObserver = new BehaviorSubject(this.questions)
+    scoresObserver = new BehaviorSubject(this.scores)
 
   createQuestion(question) {
     console.log("in question create function")
@@ -45,6 +48,45 @@ export class TaskService {
         console.log('Successful response from the server');
         this.questions = questions.json();
         this.questionObserver.next(this.questions)
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
+  }
+  saveResult(score) {
+    this.score=score
+    console.log("in question create function")
+    return this._http.post(`/score`, score)
+    .subscribe( 
+      (response) => {
+      
+        console.log(response.json())
+        if(response.json().errmsg){
+          console.log("in response error if")
+          this.error=response.json().errmsg
+         
+          console.log(this.error)
+        }
+        else{
+          console.log('Successful response from the server');
+          this.scoresAll()
+          this._redirect.navigate(['../Home'])
+        }
+      },
+      (err) => {
+        console.log(err);
+        this.error=err
+      }
+    )
+  }
+  scoresAll() {
+    return this._http.get(`/score`)
+    .subscribe( 
+      (scores) => {
+        console.log('Successful response from the server');
+        this.scores = scores.json();
+        this.scoresObserver.next(this.scores)
       },
       (err) => {
         console.log(err);
