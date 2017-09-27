@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { TaskService } from './task.service';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TaskService } from './task.service';
     QuestionComponent,
     NewQuestionComponent,
     GameComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

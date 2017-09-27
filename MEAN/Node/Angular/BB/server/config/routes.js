@@ -1,4 +1,5 @@
-
+const path = require('path')
+var Score = require('../controllers/score.js');
 var Question = require('../controllers/tasks.js');
 module.exports = function(app){
 
@@ -11,24 +12,19 @@ module.exports = function(app){
         console.log('in add route')
         Question.create(req,res);
     })
-    app.post('/product', function(req, res) {
-        console.log('in product create route')
-        Product.create(req,res);
+    app.post('/score', function(req, res) {
+        
+        Score.create(req,res);
     })
 
-    app.get('/user/:email', function(req, res) {
-        console.log(req.params.email)
-        User.show(req,res);  
+    app.get('/score', function(req, res) {
+       
+        Score.showall(req,res);  
     })
 
-    app.put('/tasks/:id', function(req, res) {
-        Task.update(req,res);
-    })
-
-    app.delete('/tasks/:id', function(req, res) {
-        Task.destroy(req,res);
-    })
-
+    app.all("*", (req,res,next) => {
+        res.sendFile(path.resolve("./bb/dist/index.html"))
+    });
   
 
 }

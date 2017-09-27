@@ -1,13 +1,14 @@
-<body><div class="results" *ngIf="score"><p>That was great,{{user}}! Your score is {{results.score}}{{results.percentage}}</p></div>
+<body><div class="results" *ngIf="score"><p>That was great, {{user}}! Your score is {{score.score}} or {{score.percent}}%</p></div>
 
 <div class="play">
-  <button (click)="play()" class="playbutton">Play</button><br>
+  <!-- <button type="button" (click)="play()" class="playbutton">Play</button><br> -->
+  <button  [routerLink]="['/lets_play']" class="playbutton">Play</button><br>
   <p>Click the Button above to start the trivia game.</p>
 </div>
 <div class="score">
   <form (ngSubmit)="onSearch()" name="search" >
-    <input type="text"
-    
+   Search:<input type="text" name="search"
+   [(ngModel)]="search1"
     >
   </form>
   <table>
@@ -16,9 +17,13 @@
       <th>Score</th>
       <th>Percentage</th>
     </tr>
-    <tr>
+    <tr *ngFor="let each of scores|search:search1">
+      <td>{{each.name}}</td>
+      <td>{{each.score}}</td>
+      <td>{{each.percent}}%</td>
 
     </tr>
   </table>
 </div>
 </body>
+

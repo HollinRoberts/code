@@ -1,0 +1,26 @@
+<body>
+<a [routerLink]="['/create']">Create a new Poll</a> |
+<a class="logout" (click)="logout()">Logout</a>
+<form (ngSubmit)="onSearch()" name="search" >
+        Search:<input type="text" name="search"
+        [(ngModel)]="arg"
+         >
+</form>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Survey Question</th>
+        <th>Date Posted</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let i of surveys |sort:arg">
+        <td>{{i.user}}</td>
+        <td><a class="logout" (click)="play(i._id)">{{i.question}}</a></td>
+        <td>{{i.createdAt|date:medium}}</td>
+        <td><button *ngIf='user==i.user'  (click)="delete(i._id)">Delete</button></td>
+
+    </tr>
+</table>
+
+
+</body>
