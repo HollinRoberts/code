@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   surveys=[]
-
+  user=this._taskService.user
   logout(){
     this._taskService.user.pop();
     this._redirect.navigate(['../login'])

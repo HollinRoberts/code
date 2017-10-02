@@ -9,7 +9,7 @@
   minlength="8"
   
   [(ngModel)]="survey.question" #question='ngModel'
-  ></textarea> <br>
+  ></textarea><span *ngIf="question.touched && !question.valid"> Question is Required</span><span *ngIf="question.errors?.minlength"> Must be at least 8 chars long</span> <br>
 
   Option 1: <input 
   type="text" 
@@ -17,7 +17,7 @@
   required
   minlength="3"
   [(ngModel)]="survey.o1" #o1='ngModel'
-  ><br>
+  ><span *ngIf="o1.touched && !o1.valid"> Question is Required</span><span *ngIf="o1.errors?.minlength"></span><br>
 
   Option 2: <input 
   type="text" 
@@ -26,7 +26,7 @@
   minlength="3"
   
   [(ngModel)]="survey.o2" #o2='ngModel'
-  ><br>
+  ><span *ngIf="o2.touched && !o2.valid"> Question is Required</span><span *ngIf="o2.errors?.minlength"></span><br>
 
   Option 3: <input 
   type="text" 
@@ -35,7 +35,7 @@
   minlength="3"
   
   [(ngModel)]="survey.o3" #o3='ngModel'
-  ><br>
+  ><span *ngIf="o3.touched && !o3.valid"> Question is Required</span><span *ngIf="o3.errors?.minlength"></span><br>
 
   Option 4: <input 
   type="text" 
@@ -44,9 +44,8 @@
   minlength="3"
   
   [(ngModel)]="survey.o4" #o4='ngModel'
-  ><br>
+  ><span *ngIf="o4.touched && !o4.valid"> Question is Required</span><span *ngIf="o4.errors?.minlength"></span><br>
   <input type="submit" value="Add Question" [disabled]="poll.invalid">
 </form>
 
 </body>
-{{survey|json}}

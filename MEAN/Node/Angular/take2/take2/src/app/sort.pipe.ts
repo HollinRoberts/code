@@ -12,7 +12,7 @@ export class SortPipe implements PipeTransform {
     console.log(value)
     var result=value.filter(function(values){
       console.log(values)
-      return values.user.indexOf(args)!==-1 || values.question.indexOf(args)!==-1
+      return values.user.toUpperCase().indexOf(args.toUpperCase())!==-1 || values.question.toUpperCase().indexOf(args.toUpperCase())!==-1
     })
     return result
   }
