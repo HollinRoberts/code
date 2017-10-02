@@ -1,0 +1,12 @@
+<Table>
+<tr>
+<td class="hand" *ngFor="let i of player.hand; let x = index" >
+  <div class="card" *ngIf="i<=1" (click)="playCard(x)">
+    <img src="./../assets/sword.png" alt="sword">
+  </div>
+  <div class="card" *ngIf="i==2" (click)="playCard(x)">
+      <img src="./../assets/Potion.png" alt="sword">
+  </div>
+</td>
+</tr>
+</Table>

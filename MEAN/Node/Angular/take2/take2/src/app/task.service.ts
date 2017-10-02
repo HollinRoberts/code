@@ -78,8 +78,8 @@ export class TaskService {
       (game) => {
         console.log('Successful response from the server');
         console.log(game)
-        this.game = game.json();
-        this.gameObserver.next(this.game)
+        // this.game = game.json();
+        // this.gameObserver.next(this.game)
       },
       (err) => {
         console.log(err);

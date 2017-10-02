@@ -17,10 +17,8 @@
         <td>{{i.user}}</td>
         <td><a class="logout" (click)="play(i._id)">{{i.question}}</a></td>
         <td>{{i.createdAt|date:medium}}</td>
-        <td><button *ngIf='user==i.user'  (click)="delete(i._id)">Delete</button></td>
+        <td><div *ngIf='user[0].name==i.user'><button   (click)="delete(i._id)">Delete</button></div></td>
 
     </tr>
 </table>
-
-
 </body>

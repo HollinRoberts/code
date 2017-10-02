@@ -9,7 +9,7 @@
   </tr>
   <tr *ngFor="let i of game.options ; let x = index">
       <td>{{i}}</td>
-      <td>{{game.count[x]}}</td>
+      <td>{{gameCount[x]}}</td>
       <td><button (click)="vote(game._id,x)" >Vote</button></td>
 
   </tr>

@@ -12,6 +12,8 @@ export class SurveyComponent implements OnInit {
   constructor(private _taskService: TaskService) {
     this._taskService.gameObserver.subscribe((data) => {
       this.game = data;
+      this.gameCount=this.game['count']
+      console.log(this.gameCount)
     })
    }
 
@@ -25,6 +27,7 @@ export class SurveyComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

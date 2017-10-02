@@ -1,0 +1,8 @@
+C:\code\C#\fundamentals1\bin\Debug\netcoreapp1.1\fundamentals1.deps.json
+C:\code\C#\fundamentals1\bin\Debug\netcoreapp1.1\fundamentals1.runtimeconfig.json
+C:\code\C#\fundamentals1\bin\Debug\netcoreapp1.1\fundamentals1.runtimeconfig.dev.json
+C:\code\C#\fundamentals1\bin\Debug\netcoreapp1.1\fundamentals1.dll
+C:\code\C#\fundamentals1\bin\Debug\netcoreapp1.1\fundamentals1.pdb
+C:\code\C#\fundamentals1\obj\Debug\netcoreapp1.1\fundamentals1.AssemblyInfo.cs
+C:\code\C#\fundamentals1\obj\Debug\netcoreapp1.1\fundamentals1.dll
+C:\code\C#\fundamentals1\obj\Debug\netcoreapp1.1\fundamentals1.pdb
