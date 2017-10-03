@@ -7042,16 +7042,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\code\\C#\\Human\\Human.csproj",
-      "projectName": "Human",
-      "projectPath": "c:\\code\\C#\\Human\\Human.csproj",
-      "outputPath": "c:\\code\\C#\\Human\\obj\\",
+      "projectUniqueName": "C:\\code\\C#\\WizardNinjaSamurai\\WizardNinjaSamurai.csproj",
+      "projectName": "WizardNinjaSamurai",
+      "projectPath": "C:\\code\\C#\\WizardNinjaSamurai\\WizardNinjaSamurai.csproj",
+      "outputPath": "C:\\code\\C#\\WizardNinjaSamurai\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/Human.dll": "c:\\code\\C#\\Human\\bin\\placeholder\\netcoreapp1.1\\Human.dll"
+        "lib/netcoreapp1.1/WizardNinjaSamurai.dll": "C:\\code\\C#\\WizardNinjaSamurai\\bin\\placeholder\\netcoreapp1.1\\WizardNinjaSamurai.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {
