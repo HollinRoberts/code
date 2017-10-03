@@ -1,0 +1,8 @@
+C:\code\C#\DeckofCards\bin\Debug\netcoreapp1.1\DeckofCards.deps.json
+C:\code\C#\DeckofCards\bin\Debug\netcoreapp1.1\DeckofCards.runtimeconfig.json
+C:\code\C#\DeckofCards\bin\Debug\netcoreapp1.1\DeckofCards.runtimeconfig.dev.json
+C:\code\C#\DeckofCards\obj\Debug\netcoreapp1.1\DeckofCards.AssemblyInfo.cs
+C:\code\C#\DeckofCards\bin\Debug\netcoreapp1.1\DeckofCards.dll
+C:\code\C#\DeckofCards\bin\Debug\netcoreapp1.1\DeckofCards.pdb
+C:\code\C#\DeckofCards\obj\Debug\netcoreapp1.1\DeckofCards.dll
+C:\code\C#\DeckofCards\obj\Debug\netcoreapp1.1\DeckofCards.pdb
