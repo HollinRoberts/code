@@ -1,0 +1,8 @@
+C:\code\C#\WizardNinjaSamurai\bin\Debug\netcoreapp1.1\WizardNinjaSamurai.deps.json
+C:\code\C#\WizardNinjaSamurai\bin\Debug\netcoreapp1.1\WizardNinjaSamurai.runtimeconfig.json
+C:\code\C#\WizardNinjaSamurai\bin\Debug\netcoreapp1.1\WizardNinjaSamurai.runtimeconfig.dev.json
+C:\code\C#\WizardNinjaSamurai\obj\Debug\netcoreapp1.1\WizardNinjaSamurai.AssemblyInfo.cs
+C:\code\C#\WizardNinjaSamurai\bin\Debug\netcoreapp1.1\WizardNinjaSamurai.dll
+C:\code\C#\WizardNinjaSamurai\bin\Debug\netcoreapp1.1\WizardNinjaSamurai.pdb
+C:\code\C#\WizardNinjaSamurai\obj\Debug\netcoreapp1.1\WizardNinjaSamurai.dll
+C:\code\C#\WizardNinjaSamurai\obj\Debug\netcoreapp1.1\WizardNinjaSamurai.pdb
