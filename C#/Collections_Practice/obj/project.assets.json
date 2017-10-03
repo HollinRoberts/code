@@ -7042,16 +7042,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\code\\C#\\basic13\\Basic13.csproj",
-      "projectName": "Basic13",
-      "projectPath": "c:\\code\\C#\\basic13\\Basic13.csproj",
-      "outputPath": "c:\\code\\C#\\basic13\\obj\\",
+      "projectUniqueName": "C:\\code\\C#\\Collections_Practice\\Collections_Practice.csproj",
+      "projectName": "Collections_Practice",
+      "projectPath": "C:\\code\\C#\\Collections_Practice\\Collections_Practice.csproj",
+      "outputPath": "C:\\code\\C#\\Collections_Practice\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/Basic13.dll": "c:\\code\\C#\\basic13\\bin\\placeholder\\netcoreapp1.1\\Basic13.dll"
+        "lib/netcoreapp1.1/Collections_Practice.dll": "C:\\code\\C#\\Collections_Practice\\bin\\placeholder\\netcoreapp1.1\\Collections_Practice.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {
