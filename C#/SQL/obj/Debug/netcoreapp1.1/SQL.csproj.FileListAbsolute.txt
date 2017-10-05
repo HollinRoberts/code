@@ -1,0 +1,8 @@
+C:\code\C#\SQL\bin\Debug\netcoreapp1.1\SQL.deps.json
+C:\code\C#\SQL\bin\Debug\netcoreapp1.1\SQL.runtimeconfig.json
+C:\code\C#\SQL\bin\Debug\netcoreapp1.1\SQL.runtimeconfig.dev.json
+C:\code\C#\SQL\obj\Debug\netcoreapp1.1\SQL.AssemblyInfo.cs
+C:\code\C#\SQL\bin\Debug\netcoreapp1.1\SQL.dll
+C:\code\C#\SQL\bin\Debug\netcoreapp1.1\SQL.pdb
+C:\code\C#\SQL\obj\Debug\netcoreapp1.1\SQL.dll
+C:\code\C#\SQL\obj\Debug\netcoreapp1.1\SQL.pdb
