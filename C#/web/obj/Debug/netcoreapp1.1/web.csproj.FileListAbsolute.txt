@@ -1,0 +1,8 @@
+C:\code\C#\web\bin\Debug\netcoreapp1.1\web.deps.json
+C:\code\C#\web\bin\Debug\netcoreapp1.1\web.runtimeconfig.json
+C:\code\C#\web\bin\Debug\netcoreapp1.1\web.runtimeconfig.dev.json
+C:\code\C#\web\bin\Debug\netcoreapp1.1\web.dll
+C:\code\C#\web\bin\Debug\netcoreapp1.1\web.pdb
+C:\code\C#\web\obj\Debug\netcoreapp1.1\web.AssemblyInfo.cs
+C:\code\C#\web\obj\Debug\netcoreapp1.1\web.dll
+C:\code\C#\web\obj\Debug\netcoreapp1.1\web.pdb
