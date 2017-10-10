@@ -1,0 +1,8 @@
+C:\code\C#\RandomPasscode\bin\Debug\netcoreapp1.1\RandomPasscode.deps.json
+C:\code\C#\RandomPasscode\bin\Debug\netcoreapp1.1\RandomPasscode.runtimeconfig.json
+C:\code\C#\RandomPasscode\bin\Debug\netcoreapp1.1\RandomPasscode.runtimeconfig.dev.json
+C:\code\C#\RandomPasscode\bin\Debug\netcoreapp1.1\RandomPasscode.dll
+C:\code\C#\RandomPasscode\bin\Debug\netcoreapp1.1\RandomPasscode.pdb
+C:\code\C#\RandomPasscode\obj\Debug\netcoreapp1.1\RandomPasscode.AssemblyInfo.cs
+C:\code\C#\RandomPasscode\obj\Debug\netcoreapp1.1\RandomPasscode.dll
+C:\code\C#\RandomPasscode\obj\Debug\netcoreapp1.1\RandomPasscode.pdb
