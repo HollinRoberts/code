@@ -1,0 +1,15 @@
+<div>
+    <h1>
+        Here are the awesome quotes!
+    </h1>
+    @{
+        foreach(var quote in ViewBag.Quotes)
+        {
+          
+          
+                <p>"@quote["quote"]"</p>
+                <h4>@quote["name"] quote["createdAt"]</h4>
+            
+        }
+    }
+</div>
