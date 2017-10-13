@@ -1,0 +1,42 @@
+<h1>CodingDojo Wall</h1>
+<h3>Welcome @ViewBag.name</h3>
+<a href="/logoff">Log Off</a>
+
+<h4>Post a message</h4>
+<Form action="add" name="add" method="post">
+    <textarea name="quote" id="" cols="100" rows="5">
+    </textarea><br>
+    <input type="submit" value="Post a message.">
+</Form>
+
+
+    @{
+        foreach(var quote in ViewBag.Quotes)
+        {       <h4>@quote["name"] @quote["createdAt"]</h4>
+                <p>"@quote["quote"]"</p>
+        if(@quote["name"] == @ViewBag.name)
+            {
+            <Form action="delete" name="delete" method="post">
+            <input type="hidden" name="id" value="@quote["idquotes"]">
+            <input type="submit" value="Delete.">
+            </Form>
+            }
+        
+        <Form action="comment" name="comment" method="post">
+        <input type="hidden" name="id" value="@quote["idquotes"]">  
+        <textarea name="comment" cols="100" rows="2"></textarea><br>
+        <input type="submit" value="Post a comment.">
+        </Form>
+
+        foreach(var comment in ViewBag.Comments)
+        {      
+            if(@comment["msgId"]==@quote["idquotes"]){
+                <h4>@quote["createdAt"]</h4>
+                <p>"@comment["comments"]"</p>
+            }
+        }
+        }
+
+
+    }
+</div>
