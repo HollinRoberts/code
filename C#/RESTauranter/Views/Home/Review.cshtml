@@ -1,0 +1,10 @@
+@{      
+        foreach(var review in ViewBag.Reviews)
+        {
+            
+                <h3>Review for: @review.rname -  @review.stars stars.</h3>
+                <p>Reviewer: @review.name , @review.date</p>
+                <p>@review.review</p>
+        }
+        
+}

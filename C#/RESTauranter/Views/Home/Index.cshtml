@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{      
+        foreach(var error in ViewBag.errors)
+        {   
+            foreach(var each1 in error.Errors){
+                <p>@each1.ErrorMessage</p>
+        }
+        }      
+}
+<h1>Write a new Review:</h1>
+<form action="review" method="post">
+    Reviewer Name:<input type="text" name="name"><br>
+    Restaurant Name:<input type="text" name="rName"><br>
+    Review:<textarea name="review" id="" cols="30" rows="10"></textarea><br>
+    Date of visit: <input type="date" name="date"><br>
+    Stars: <select name="stars">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+<p>Get to adding stuff</p>
