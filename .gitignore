@@ -2,3 +2,4 @@
 node_modules
 venv/
 Python/myenvironments
+appsettings.json

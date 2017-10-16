@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Welcome, @ViewBag.Name</h1>
+Current ballance: <div class="ballance">@ViewBag.Ballance</div>
+<form action="action" method="post">
+    <input type="number" name="value">
+    <input type="submit" value="Submit">
+</form>
+<table>
+    <tr>
+        <th>Ammount</th>
+        <th>Date</th>
+    </tr>
+    @{
+        foreach(var action in @ViewBag.Transactions){
+
+        
+    <tr>
+        <td>@action.change</td>
+        <td>@action.createdAt</td>
+    </tr>
+        }
+    }
+</table>
