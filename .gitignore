@@ -1,5 +1,9 @@
 *.zip
 node_modules
 venv/
+<<<<<<< HEAD
 Python/myenvironments
 appsettings.json
+=======
+Python/myenvironments
+>>>>>>> 39ab62653c970fc20d682723ede9bc8367f916c3
